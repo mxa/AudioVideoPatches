@@ -1,0 +1,34 @@
+#N canvas 0 112 596 616 10;
+#X obj 22 14 cnv 15 480 60 empty empty let's_play 20 30 0 20 -262130
+-99865 0;
+#X obj 48 129 openpanel;
+#X obj 48 105 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X msg 48 167 open \$1;
+#X obj 48 308 dac~;
+#X msg 61 216 1;
+#X text 148 103 BANG! create an object-box and write "bng";
+#X text 148 126 openpanel makes the file selector popup on a bang message.
+;
+#X text 148 139 It spits out the path to the selected file.;
+#X text 149 163 \$1 in a message box is a local variable and gets replaced
+by the file path from openpanel;
+#X text 147 212 play!;
+#X obj 48 249 readsf~;
+#X text 145 305 Digital Analog Converter a.k.a the Loudspeakers.;
+#X text 145 244 readsf~ means read soundfile. The ~ (Tilde) indicates
+we are dealing with audio signals.;
+#X text 146 279 The thicker patchcords as well.;
+#X text 46 361 Read the helpfile for readsf~ (right-click on the object)
+;
+#X text 45 376 Use .wav or .aiff soundfiles \, not .mp3 or .aac;
+#X text 45 390 No Sound? Is Audio turned on? In Pure data as well?
+;
+#X text 26 581 Max Neupert \, GMU - Bauhaus-University Weimar 2009
+;
+#X connect 1 0 3 0;
+#X connect 2 0 1 0;
+#X connect 3 0 11 0;
+#X connect 5 0 11 0;
+#X connect 11 0 4 0;
+#X connect 11 0 4 1;

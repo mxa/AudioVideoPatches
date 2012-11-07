@@ -1,0 +1,54 @@
+#N canvas 492 130 570 648 10;
+#X declare -lib GEM;
+#X declare -lib zexy;
+#X declare -lib motex;
+#X obj 412 -41 import GEM;
+#X obj 18 -57 cnv 15 480 60 empty empty QuickTime_Player+AppleScript
+20 30 0 20 -262130 -99865 0;
+#X text 43 432 Max Neupert \, GMU - Bauhaus-University Weimar 2011
+;
+#X obj 44 333 zexy/list2symbol;
+#X obj 44 311 list;
+#X obj 27 383 motex/system;
+#X msg 44 357 osascript -e 'tell application "QuickTime Player" to
+\$1' &;
+#N canvas 0 22 231 126 init 0;
+#X obj 44 27 declare -lib zexy;
+#X obj 43 49 declare -lib motex;
+#X restore 449 47 pd init;
+#X obj 44 154 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 44 174 openpanel;
+#X msg 212 188 play document 1;
+#X msg 27 102 osascript -e 'tell application "Finder" to open application
+file "QuickTime Player.app" of folder "Applications" of startup disk'
+&;
+#X obj 44 195 zexy/symbol2list /;
+#X obj 44 215 zexy/list2symbol :;
+#X msg 44 236 open file "\$1";
+#X msg 212 238 stop document 1;
+#X msg 212 211 pause document 1;
+#X msg 212 265 present document 1;
+#X text 326 187 Play;
+#X text 327 210 Pause;
+#X text 330 234 Stop;
+#X text 334 266 Play fullscreen;
+#X text 65 153 Open QuickTime document;
+#X text 391 115 open QuickTime application;
+#X text 29 53 In OS X you may control QuickTime from within Pure Data
+through AppleScript.;
+#X text 27 16 Sometimes you may simply want to trigger a playback of
+a video with Pure Data.;
+#X connect 3 0 6 0;
+#X connect 4 0 3 0;
+#X connect 6 0 5 0;
+#X connect 8 0 9 0;
+#X connect 9 0 12 0;
+#X connect 10 0 4 0;
+#X connect 11 0 5 0;
+#X connect 12 0 13 0;
+#X connect 13 0 14 0;
+#X connect 14 0 4 0;
+#X connect 15 0 4 0;
+#X connect 16 0 4 0;
+#X connect 17 0 4 0;

@@ -1,0 +1,53 @@
+#N canvas 634 30 688 701 10;
+#X declare -lib py;
+#X declare -lib pyext;
+#X obj 28 -33 cnv 15 480 60 empty empty Videolan+Python 20 30 0 20
+-262130 -99865 0;
+#X text 53 498 Max Neupert \, GMU - Bauhaus-University Weimar 2011
+;
+#X text 37 40 Sometimes you may simply want to trigger a playback of
+a video with Pure Data.;
+#X text 52 513 Thanks to Thomas Grill;
+#X obj 49 411 list prepend set;
+#X obj 49 433 list trim;
+#X msg 49 315 reload.;
+#X msg 313 335 list quit;
+#X msg 306 315 list help;
+#X msg 49 456 VLC media player 1.1.5 The Luggage Remote-Control-Interface
+initialisiert. Geben Sie `help' für Hilfe ein. >;
+#X msg 284 249 list play;
+#X msg 295 273 list playlist;
+#X obj 64 387 print;
+#X msg 301 293 list stop;
+#N canvas 156 161 210 131 init 0;
+#X obj 24 27 declare -lib py;
+#X obj 24 46 declare -lib pyext;
+#X restore 441 45 pd init;
+#X msg 268 224 list add /Path/to/File.avi;
+#X text 36 76 You can use VideoLanClient Player from within Pure Data
+through Python and a network socket.;
+#X text 36 109 Pyext is necessary for this to run.;
+#X text 57 124 http://puredata.info/Members/thomas/py/;
+#X text 37 148 Then in a bash run;
+#X text 53 162 $ cd /Applications/VLC.app/Contents/MacOS;
+#X text 53 175 $ ./VLC -I rc --rc-host=localhost:1234;
+#X text 347 161 (example under OS X);
+#X obj 49 358 pyx. 1 1 vlc localhost 1234 @detach 0;
+#X obj 487 289 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 487 312 openpanel;
+#X msg 487 334 list add \$1;
+#X connect 4 0 5 0;
+#X connect 5 0 9 0;
+#X connect 6 0 23 0;
+#X connect 7 0 23 1;
+#X connect 8 0 23 1;
+#X connect 10 0 23 1;
+#X connect 11 0 23 1;
+#X connect 13 0 23 1;
+#X connect 15 0 23 1;
+#X connect 23 0 4 0;
+#X connect 23 0 12 0;
+#X connect 24 0 25 0;
+#X connect 25 0 26 0;
+#X connect 26 0 23 1;

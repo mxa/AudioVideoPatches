@@ -1,0 +1,46 @@
+#N canvas 306 51 624 734 10;
+#X declare -lib GEM;
+#X declare -lib Gem;
+#X obj 416 30 import GEM;
+#X obj 22 14 cnv 15 480 60 empty empty let's_play_video 20 30 0 20
+-262130 -99865 0;
+#X obj 34 238 gemwin;
+#X msg 46 216 0 \, destroy;
+#X text 142 195 this opens the GEM window and starts the rendering
+;
+#X text 141 214 this stops the rendering and closes the GEM window
+;
+#X obj 35 477 pix_texture;
+#X obj 34 279 gemhead;
+#X obj 67 342 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 67 360 openpanel;
+#X msg 67 379 open \$1;
+#X text 93 341 open a video clip here;
+#X text 151 479 this maps the pixels of the video on;
+#X text 153 536 a geometrical object;
+#X floatatom 140 416 5 0 0 0 - - -;
+#X text 175 412 frame #;
+#X obj 373 150 declare -lib Gem;
+#X text 31 115 You load extensions either by adding it generally to
+the startup flags like this: -lib Gem;
+#X text 34 149 Or by declaring it to this patch (but only to this one)
+;
+#X text 33 82 We'll use an extension (in Pd called external) to Pure
+data \, GEM to play video;
+#X text 26 659 Max Neupert \, GMU - Bauhaus-University Weimar 2009
+;
+#X obj 35 450 pix_film bass2.mov;
+#X text 153 450 this handles the video file;
+#X text 324 450 (and optional: the default clip to load);
+#X obj 35 534 square 2;
+#X msg 34 194 create \, 1;
+#X connect 3 0 2 0;
+#X connect 6 0 24 0;
+#X connect 7 0 21 0;
+#X connect 8 0 9 0;
+#X connect 9 0 10 0;
+#X connect 10 0 21 0;
+#X connect 14 0 21 1;
+#X connect 21 0 6 0;
+#X connect 25 0 2 0;

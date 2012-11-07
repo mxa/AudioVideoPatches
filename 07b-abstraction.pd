@@ -1,0 +1,60 @@
+#N canvas 780 121 521 564 10;
+#X declare -lib iemlib;
+#X declare -lib Gem;
+#X declare -lib Gem;
+#X declare -lib iemlib;
+#X declare -lib Gem;
+#X obj 16 0 cnv 15 480 60 empty empty Abstraction 20 30 0 20 -262130
+-99865 0;
+#X obj 49 209 gemwin;
+#X msg 49 165 create \, 1;
+#X msg 61 187 0 \, destroy;
+#X obj 71 322 *;
+#X msg 71 344 \$1 50;
+#X obj 74 281 hsl 128 15 0 1 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 3900 1;
+#X text 47 142 Gem window;
+#X obj 86 300 r \$0-samples;
+#X obj 26 162 cnv 15 20 20 empty empty 1 6 10 0 14 -261234 -66577 0
+;
+#X obj 24 253 cnv 15 20 20 empty empty 3 6 10 0 14 -261234 -66577 0
+;
+#N canvas 0 22 177 189 init 0;
+#X obj -67 -41 declare -lib iemlib;
+#X obj -66 -21 declare -lib Gem;
+#X obj -63 3 loadbang;
+#X msg -66 24 \; pd dsp 1;
+#X connect 2 0 3 0;
+#X restore 445 81 pd init;
+#X text 34 519 Max Neupert \, GMU - Bauhaus-University Weimar 2012
+;
+#X floatatom 154 445 9 0 0 0 - - -;
+#X obj 51 474 dac~;
+#X msg 51 253 bang;
+#X obj 138 472 s \$0-samples;
+#X obj 162 352 openpanel;
+#X obj 162 334 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 131 330 cnv 15 20 20 empty empty 2 6 10 0 14 -261234 -66577
+0;
+#X msg 162 374 open \$1;
+#X text 129 330 (;
+#X text 145 331 );
+#X obj 51 412 avplayer~ bass2;
+#X text 29 72 This patch shows how to make use of the previous patch
+as an abstraction. An Abstraction is just another patch loaded into
+a parent patch. Click on avplayer~ to look inside.;
+#X connect 2 0 1 0;
+#X connect 3 0 1 0;
+#X connect 4 0 5 0;
+#X connect 5 0 23 0;
+#X connect 6 0 4 0;
+#X connect 8 0 4 1;
+#X connect 15 0 23 0;
+#X connect 17 0 20 0;
+#X connect 18 0 17 0;
+#X connect 20 0 23 0;
+#X connect 23 0 14 0;
+#X connect 23 0 14 1;
+#X connect 23 1 13 0;
+#X connect 23 1 16 0;

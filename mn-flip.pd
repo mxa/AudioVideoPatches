@@ -1,0 +1,16 @@
+#N canvas 811 88 492 285 10;
+#X obj 38 47 inlet;
+#X obj 38 209 outlet;
+#X text 183 41 this is an abstraction to get the;
+#X text 183 56 display mirrored on any system;
+#X text 34 256 Max Neupert \, GMU - Bauhaus-University Weimar 2009
+;
+#X text 178 112 Save this patch in such a way that the;
+#X text 178 126 image appears mirrored on your screen.;
+#X obj 38 118 rotateXYZ 0 180 0;
+#X obj 104 48 inlet;
+#X obj 104 83 * 180;
+#X connect 0 0 7 0;
+#X connect 7 0 1 0;
+#X connect 8 0 9 0;
+#X connect 9 0 7 2;

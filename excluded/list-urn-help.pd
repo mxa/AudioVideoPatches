@@ -1,0 +1,24 @@
+#N canvas 396 35 707 350 10;
+#X text 231 173 <- the argument is the range of the random number.
+;
+#X text 177 38 <- list length wanted. If this number is upper than
+the range of the random number then the length is equal at this range
+(because the random numbers are uniques).;
+#X obj 141 173 list-urn 10;
+#X msg 141 39 10;
+#X msg 161 89 15;
+#X floatatom 86 88 5 0 0 0 - - -;
+#X obj 245 222 list-sort;
+#X obj 141 256 print list-urn;
+#X obj 245 256 print list-sort;
+#X text 314 222 <- sort the list from [list-urn];
+#X text 238 137 <- you can set dynamically the range of the random
+number;
+#X msg 204 137 50;
+#X connect 2 0 7 0;
+#X connect 2 0 6 0;
+#X connect 3 0 2 0;
+#X connect 4 0 2 0;
+#X connect 5 0 2 0;
+#X connect 6 0 8 0;
+#X connect 11 0 2 1;

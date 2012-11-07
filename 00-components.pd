@@ -1,0 +1,37 @@
+#N canvas 0 112 596 616 10;
+#X obj 21 13 cnv 15 480 60 empty empty Vocabulary 20 30 0 20 -262130
+-99865 0;
+#X obj 95 275 cnv 15 55 24 empty empty empty 20 12 0 14 -33529 -66577
+0;
+#X obj 72 316 +;
+#X floatatom 105 279 5 0 0 0 - - -;
+#X floatatom 72 351 5 0 0 0 - - -;
+#X obj 36 275 cnv 15 55 24 empty empty empty 20 12 0 14 -230353 -66577
+0;
+#X floatatom 48 279 5 0 0 0 - - -;
+#X text 177 269 dry basics to start with:;
+#X obj 79 120;
+#X text 140 121 Object \, still empty;
+#X obj 80 147 +;
+#X text 140 148 Object addition;
+#X floatatom 80 198 5 0 0 0 - - -;
+#X text 140 198 Number Box;
+#X text 278 121 Objekt \, leer;
+#X text 278 148 Objekt zur Addition;
+#X text 278 199 Zahlenfeld;
+#X text 26 117 ctl-1;
+#X text 25 197 ctl-3;
+#X msg 79 171;
+#X text 140 169 Message Box;
+#X text 279 172 Nachrichtenfeld;
+#X text 25 173 ctl-2;
+#X text 24 98 Our vocabulary of objects to start with:;
+#X text 175 307 2 objects have one warm inlet \, the leftmost.;
+#X text 175 324 3 objects have one or more cold inlets;
+#X text 175 289 1 Pd has edit-mode and run-mode;
+#X text 30 232 Objects receive messages to act upon.;
+#X text 22 573 Max Neupert \, GMU - Bauhaus-University Weimar 2009
+;
+#X connect 2 0 4 0;
+#X connect 3 0 2 1;
+#X connect 6 0 2 0;
