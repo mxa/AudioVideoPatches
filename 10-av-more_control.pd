@@ -92,19 +92,19 @@
 #X obj 76 495 *;
 #X obj 91 474 r \$0-samples;
 #X obj 76 452 r \$0-out;
-#N canvas 0 22 580 428 video_processing 0;
-#X obj 172 32 inlet~;
+#N canvas 1020 167 580 428 video_processing 0;
+#X obj 169 32 inlet~;
 #X obj 270 32 inlet;
-#X obj 103 300 pix_texture;
-#X obj 103 65 gemhead;
+#X obj 10 316 pix_texture;
+#X obj 10 35 gemhead;
 #X obj 270 149 unpack f f f;
-#X obj 130 200 *;
-#X obj 130 110 snapshot~;
-#X obj 103 87 t a b;
-#X obj 130 156 /;
-#X obj 130 222 int;
-#X obj 130 244 change;
-#X obj 103 348 rectangle 3 2;
+#X obj 169 204 *;
+#X obj 169 114 snapshot~;
+#X obj 10 83 t a b;
+#X obj 169 160 /;
+#X obj 169 247 int;
+#X obj 169 268 change;
+#X obj 10 364 rectangle 3 2;
 #X text 388 203 this takes care of the;
 #X text 412 217 right aspect ratio;
 #X text 449 231 of the video;
@@ -114,12 +114,13 @@
 #X obj 346 260 *;
 #X obj 346 204 t b f;
 #X msg 346 226 3;
-#X obj 103 275 pix_buffer_read \$0-speicher;
-#X obj 145 133 r \$0-samples;
-#X obj 145 178 r \$0-frames;
+#X obj 10 291 pix_buffer_read \$0-speicher;
+#X obj 184 137 r \$0-samples;
+#X obj 184 182 r \$0-frames;
 #X obj 270 183 s \$0-frames;
-#X obj 20 243 s \$0-playhead;
-#X obj 20 222 speedlim 100;
+#X obj 84 224 s \$0-playhead;
+#X obj 84 203 speedlim 100;
+#X obj 169 225 + 0.5;
 #X connect 0 0 6 0;
 #X connect 1 0 4 0;
 #X connect 2 0 11 0;
@@ -127,7 +128,7 @@
 #X connect 4 0 23 0;
 #X connect 4 1 16 0;
 #X connect 4 2 16 1;
-#X connect 5 0 9 0;
+#X connect 5 0 26 0;
 #X connect 6 0 8 0;
 #X connect 7 0 20 0;
 #X connect 7 1 6 0;
@@ -145,6 +146,7 @@
 #X connect 21 0 8 1;
 #X connect 22 0 5 1;
 #X connect 25 0 24 0;
+#X connect 26 0 9 0;
 #X restore 271 683 pd video_processing;
 #X obj 39 521 f;
 #X obj 66 521 f;
@@ -166,8 +168,6 @@
 #X obj 9 30 declare -lib Gem;
 #X connect 0 0 1 0;
 #X restore 394 63 pd init;
-#X text 38 750 Max Neupert \, GMU - Bauhaus-University Weimar 2009
-;
 #X obj 263 92 cnv 15 20 20 empty empty 1 6 10 0 14 -261234 -66577 0
 ;
 #X text 349 95 create Gem window;
@@ -180,6 +180,7 @@
 #X obj 16 332 cnv 15 20 20 empty empty 4 6 10 0 14 -261234 -66577 0
 ;
 #X text 73 334 play;
+#X text 38 750 Max Neupert - Bauhaus-University Weimar 2009-2012;
 #X connect 2 0 7 0;
 #X connect 2 0 28 0;
 #X connect 4 0 3 0;

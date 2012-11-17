@@ -19,9 +19,9 @@
 #X obj 43 256 hsl 195 15 0 1 0 0 \$0-in \$0-in-init empty -2 -8 0 10
 -262144 -1 -1 0 1;
 #X obj 43 271 hsl 195 15 0 1 0 0 \$0-out \$0-out-init empty -2 -8 0
-10 -262144 -1 -1 13500 1;
+10 -262144 -1 -1 19400 1;
 #X obj 43 231 hsl 195 10 0 1 0 0 empty \$0-playhead empty -2 -8 0 10
--228856 -1 -1 8450 1;
+-228856 -1 -1 0 1;
 #N canvas 374 553 146 180 scratch 0;
 #X obj 23 134 outlet;
 #X obj 23 59 *;
@@ -43,33 +43,33 @@
 #X text 16 271 out;
 #X text -8 242 scratch;
 #X text -16 227 playhead;
-#N canvas 1063 214 596 730 video_processing 0;
-#X obj 172 32 inlet~;
-#X obj 103 478 pix_texture;
-#X obj 103 65 gemhead;
-#X obj 130 200 *;
-#X obj 130 110 snapshot~;
-#X obj 103 87 t a b;
-#X obj 130 156 /;
-#X obj 130 245 int;
-#X obj 130 267 change;
-#X obj 103 504 rectangle 3 2;
-#X text 173 379 this takes care of the;
-#X text 197 393 right aspect ratio;
-#X text 234 407 of the video;
-#X obj 128 353 cnv 15 45 110 empty empty empty 20 12 0 14 -261234 -66577
+#N canvas 1063 214 355 566 video_processing 0;
+#X obj 195 33 inlet~;
+#X obj 35 477 pix_texture;
+#X obj 36 28 gemhead;
+#X obj 195 203 *;
+#X obj 195 71 snapshot~;
+#X obj 36 50 t a b;
+#X obj 195 117 /;
+#X obj 195 248 int;
+#X obj 195 270 change;
+#X obj 35 503 rectangle 3 2;
+#X text 171 414 this takes care of the;
+#X text 195 428 right aspect ratio;
+#X text 232 442 of the video;
+#X obj 126 388 cnv 15 45 110 empty empty empty 20 12 0 14 -261234 -66577
 0;
-#X obj 131 359 /;
-#X obj 131 436 *;
-#X obj 131 380 t b f;
-#X msg 131 402 3;
-#X obj 103 298 pix_buffer_read \$0-speicher;
-#X obj 145 133 r \$0-samples;
-#X obj 145 178 r \$0-frames;
-#X obj 20 243 s \$0-playhead;
-#X obj 20 222 speedlim 100;
-#X obj 130 223 + 0.5;
-#X obj 104 320 pix_info;
+#X obj 129 394 /;
+#X obj 129 471 *;
+#X obj 129 415 t b f;
+#X msg 129 437 3;
+#X obj 36 297 pix_buffer_read \$0-speicher;
+#X obj 210 94 r \$0-samples;
+#X obj 210 181 r \$0-frames;
+#X obj 210 161 s \$0-playhead;
+#X obj 210 140 speedlim 100;
+#X obj 195 226 + 0.5;
+#X obj 36 319 pix_info;
 #X connect 0 0 4 0;
 #X connect 1 0 9 0;
 #X connect 2 0 5 0;
@@ -97,7 +97,7 @@
 #X connect 24 2 14 1;
 #X restore 289 542 pd video_processing;
 #X obj 43 286 hsl 195 15 1 0.0001 0 0 \$0-speed \$0-speed-init empty
--2 -8 0 10 -262144 -1 -1 13751 1;
+-2 -8 0 10 -262144 -1 -1 14551 1;
 #X text 1 286 speed;
 #N canvas 0 22 450 300 init 0;
 #X obj 14 42 loadbang;
@@ -197,7 +197,7 @@
 #X connect 14 0 12 0;
 #X restore 316 392 pd speed;
 #X obj 316 414 t f f;
-#X obj 289 349 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+#X obj 289 349 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
 #X obj 289 437 metro;
 #X text 306 346 play looping;

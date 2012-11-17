@@ -1,4 +1,4 @@
-#N canvas 297 36 528 766 10;
+#N canvas 521 97 528 766 10;
 #X declare -lib iemlib;
 #X obj -242 705 dac~;
 #X obj -243 478 vline~;
@@ -76,8 +76,6 @@
 #X obj -242 677 tabread4~ \$0-soundfile;
 #X obj -252 6 cnv 15 480 60 empty empty pd~_AUDIO_parent_process 20
 30 0 20 -262130 -99865 0;
-#X text -241 735 Max Neupert \, GMU - Bauhaus University Weimar 2009
-;
 #N canvas 115 467 450 300 init 0;
 #X obj 32 29 loadbang;
 #X msg 32 52 \; pd dsp 1;
@@ -86,13 +84,9 @@
 #X restore 181 76 pd init;
 #X obj -153 277 t a a;
 #X obj -27 701 print pd-tilde;
-#X text -246 142 http://autobuild.puredata.info/auto-build/latest/
-;
 #X text -246 101 To download a new version go to http://puredata.info/downloads
 ;
 #X text -246 128 Or try a nightly build:;
-#X text -246 75 To use the pd~ object you must use Pd > 0.42 and must
-be on Linux or OSX.;
 #X obj -21 610 cnv 15 20 20 empty empty 1 6 10 0 14 -261234 -66577
 0;
 #X msg 1 613 pd~ start -lib Gem 09b-pd-tilde_video.pd;
@@ -105,6 +99,11 @@ be on Linux or OSX.;
 #X text -17 555 The pd~ object allows you to open a patch;
 #X text -16 568 in a seperate process. This lets you take;
 #X text -16 580 advantage of multiple processors or cores.;
+#X text -246 142 http://apt.puredata.info/auto-build/latest/;
+#X text -246 75 To use the pd~ object you must use Pd > 0.42 and must
+be on Linux or OSX. There will be no Windows version of pd~.;
+#X text -241 735 Max Neupert - Bauhaus University Weimar 2009-2012
+;
 #X connect 1 0 14 0;
 #X connect 1 0 26 0;
 #X connect 3 0 4 0;
@@ -120,16 +119,16 @@ be on Linux or OSX.;
 #X connect 14 0 15 0;
 #X connect 15 0 16 0;
 #X connect 16 0 19 0;
-#X connect 17 0 30 0;
+#X connect 17 0 29 0;
 #X connect 18 0 21 0;
 #X connect 19 0 21 0;
 #X connect 20 0 21 0;
-#X connect 21 0 31 0;
+#X connect 21 0 30 0;
 #X connect 22 0 3 1;
 #X connect 23 0 15 1;
 #X connect 24 0 12 0;
 #X connect 26 0 0 0;
 #X connect 26 0 0 1;
-#X connect 30 0 11 0;
-#X connect 30 1 20 0;
-#X connect 37 0 21 0;
+#X connect 29 0 11 0;
+#X connect 29 1 20 0;
+#X connect 34 0 21 0;

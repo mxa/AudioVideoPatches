@@ -1,4 +1,4 @@
-#N canvas 0 112 596 616 10;
+#N canvas 521 49 596 616 10;
 #X obj 22 14 cnv 15 480 60 empty empty let's_play 20 30 0 20 -262130
 -99865 0;
 #X obj 48 129 openpanel;
@@ -15,7 +15,6 @@
 by the file path from openpanel;
 #X text 147 212 play!;
 #X obj 48 249 readsf~;
-#X text 145 305 Digital Analog Converter a.k.a the Loudspeakers.;
 #X text 145 244 readsf~ means read soundfile. The ~ (Tilde) indicates
 we are dealing with audio signals.;
 #X text 146 279 The thicker patchcords as well.;
@@ -24,8 +23,11 @@ we are dealing with audio signals.;
 #X text 45 376 Use .wav or .aiff soundfiles \, not .mp3 or .aac;
 #X text 45 390 No Sound? Is Audio turned on? In Pure data as well?
 ;
-#X text 26 581 Max Neupert \, GMU - Bauhaus-University Weimar 2009
+#X text 145 305 Digital to analog converter a.k.a the Loudspeakers.
 ;
+#X text 45 414 Remember to set the samplerate of Pd to the samplerate
+of the soundfile;
+#X text 26 581 Max Neupert - Bauhaus-University Weimar 2009-2012;
 #X connect 1 0 3 0;
 #X connect 2 0 1 0;
 #X connect 3 0 11 0;

@@ -1,4 +1,4 @@
-#N canvas -635 1 635 743 10;
+#N canvas 0 22 635 743 10;
 #X declare -lib Gem;
 #X obj 4 6 cnv 15 480 60 empty empty A/V_Combination_better 20 30 0
 20 -262130 -99865 0;
@@ -31,7 +31,7 @@
 #X obj 27 461 *;
 #X msg 27 483 \$1 50;
 #X obj 30 420 hsl 128 15 0 1 0 0 empty empty empty -2 -8 0 10 -262144
--1 -1 5000 1;
+-1 -1 0 1;
 #X text 27 85 Audio;
 #X text 291 87 Video;
 #X text 30 400 Scratcher;
@@ -43,8 +43,8 @@
 #X obj 322 398 snapshot~;
 #X obj 295 367 t a b;
 #X obj 322 442 /;
-#X obj 323 531 int;
-#X obj 323 553 change;
+#X obj 322 531 int;
+#X obj 322 553 change;
 #X msg 55 533 1 \, 214599 4470.81 \;;
 #X obj 28 188 t a b;
 #X obj 55 208 symbol \$0-soundfile;
@@ -76,8 +76,6 @@
 #X connect 6 0 1 0;
 #X connect 7 0 1 1;
 #X restore 55 508 pd preset;
-#X text 22 715 Max Neupert \, GMU - Bauhaus-University Weimar 2009
-;
 #X obj 270 107 cnv 15 20 20 empty empty 1 6 10 0 14 -261234 -66577
 0;
 #X obj 4 141 cnv 15 20 20 empty empty 2 6 10 0 14 -261234 -66577 0
@@ -94,7 +92,8 @@
 #X msg -57 35 \; pd dsp 1;
 #X connect 1 0 2 0;
 #X restore 448 81 pd init;
-#X obj 323 509 + 0.5;
+#X obj 322 509 + 0.5;
+#X text 22 715 Max Neupert - Bauhaus-University Weimar 2009;
 #X connect 2 0 31 0;
 #X connect 2 0 47 0;
 #X connect 3 0 7 0;
@@ -116,7 +115,7 @@
 #X connect 20 0 21 0;
 #X connect 21 0 2 0;
 #X connect 22 0 20 0;
-#X connect 30 0 56 0;
+#X connect 30 0 55 0;
 #X connect 31 0 33 0;
 #X connect 32 0 12 0;
 #X connect 32 1 31 0;
@@ -135,4 +134,4 @@
 #X connect 47 0 1 0;
 #X connect 47 0 1 1;
 #X connect 48 0 36 0;
-#X connect 56 0 34 0;
+#X connect 55 0 34 0;

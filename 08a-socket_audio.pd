@@ -1,4 +1,4 @@
-#N canvas 594 58 513 815 10;
+#N canvas 1044 57 515 889 10;
 #X declare -lib iemlib;
 #X obj -241 677 dac~;
 #X obj -242 450 vline~;
@@ -83,8 +83,8 @@
 #X restore -242 292 pd loading_sample;
 #X text -9 673 indicates connection;
 #X text -114 168 load audio and video files;
-#X obj 120 750 maxlib/netserver;
-#X obj 120 772 maxlib/netclient;
+#X obj 118 789 maxlib/netserver;
+#X obj 118 811 maxlib/netclient;
 #X text -245 133 (In the other instance open 08b-socket-video.pd);
 #X obj 119 702 mrpeach/tcpsend;
 #X obj 119 723 mrpeach/tcpreceive;
@@ -106,12 +106,15 @@
 this technique. Two instances of Pd handle audio and video separately.
 ;
 #X text -245 119 Open a second Pd and connect via network socket.;
-#X text -244 702 Note: You may actually prefer objects from the mrpeach
-library or netserver / netclient from the maxlib library over netsend
-/ netreceive because of better performance and stability. I used netsend/netreceive
-in this example because they are Pd-vanilla objects.;
-#X text -245 787 Max Neupert \, GMU - Bauhaus-University Weimar 2009-2012
+#X text -245 787 Max Neupert - Bauhaus-University Weimar 2009-2012
 ;
+#X obj 118 745 iemnet/tcpsend;
+#X obj 118 766 iemnet/tcpreceive;
+#X text -244 702 Note: You may actually prefer objects from the mrpeach
+or iemnet libraries or netserver / netclient from the maxlib library
+over netsend / netreceive because of better performance and stability.
+I used netsend/netreceive in this example because they are Pd-vanilla
+objects.;
 #X connect 1 0 18 0;
 #X connect 1 0 24 0;
 #X connect 3 0 4 0;

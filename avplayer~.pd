@@ -1,4 +1,4 @@
-#N canvas -785 654 798 781 10;
+#N canvas 238 66 798 781 10;
 #X declare -lib Gem;
 #X declare -lib iemlib;
 #X declare -lib Gem;
@@ -22,8 +22,8 @@
 #X obj 298 446 snapshot~;
 #X obj 271 421 t a b;
 #X obj 298 490 /;
-#X obj 299 572 int;
-#X obj 299 594 change;
+#X obj 298 573 int;
+#X obj 298 595 change;
 #X obj 272 699 rectangle 3 2;
 #X text 43 111 Audio;
 #X text 275 113 Video;
@@ -83,7 +83,7 @@
 #N canvas 0 22 177 189 init 0;
 #X obj -67 -41 declare -lib iemlib;
 #X obj -66 -21 declare -lib Gem;
-#X obj -63 3 loadbang;
+#X obj -66 2 loadbang;
 #X msg -66 24 \; pd dsp 1;
 #X connect 2 0 3 0;
 #X restore 508 15 pd init;
@@ -93,11 +93,10 @@
 #X obj 39 466 outlet~;
 #X obj 149 703 outlet;
 #X text 35 72 this patch is used by 07b-abstraction.pd;
-#X text 39 733 Max Neupert \, GMU - Bauhaus-University Weimar 2012
-;
 #X obj 43 181 route open bang;
 #X obj 298 553 + 0.5;
 #X obj 272 647 translateXYZ \$2 \$3 \$4;
+#X text 39 733 Max Neupert - Bauhaus-University Weimar 2012;
 #X connect 1 0 11 0;
 #X connect 1 0 30 0;
 #X connect 2 0 4 0;
@@ -111,7 +110,7 @@
 #X connect 9 0 41 0;
 #X connect 9 1 22 0;
 #X connect 9 2 22 1;
-#X connect 10 0 62 0;
+#X connect 10 0 61 0;
 #X connect 11 0 13 0;
 #X connect 12 0 33 0;
 #X connect 12 1 11 0;
@@ -128,7 +127,7 @@
 #X connect 27 0 26 0;
 #X connect 30 0 57 0;
 #X connect 32 0 9 0;
-#X connect 33 0 63 0;
+#X connect 33 0 62 0;
 #X connect 34 0 13 1;
 #X connect 35 0 10 1;
 #X connect 36 0 38 0;
@@ -143,9 +142,9 @@
 #X connect 51 0 44 0;
 #X connect 54 0 55 0;
 #X connect 55 0 43 0;
-#X connect 56 0 61 0;
-#X connect 61 0 55 0;
-#X connect 61 1 26 0;
-#X connect 61 2 1 0;
-#X connect 62 0 14 0;
-#X connect 63 0 6 0;
+#X connect 56 0 60 0;
+#X connect 60 0 55 0;
+#X connect 60 1 26 0;
+#X connect 60 2 1 0;
+#X connect 61 0 14 0;
+#X connect 62 0 6 0;

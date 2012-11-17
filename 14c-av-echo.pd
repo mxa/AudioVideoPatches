@@ -6,7 +6,7 @@
 #X msg 35 64 \; pd dsp 1;
 #X obj 25 16 declare -lib Gem;
 #X obj 24 121 s \$0-volume;
-#X msg 24 100 0.6;
+#X msg 24 100 0.2;
 #X connect 0 0 1 0;
 #X connect 0 0 4 0;
 #X connect 4 0 3 0;
@@ -61,11 +61,10 @@
 #X obj 532 428 loadbang;
 #X obj 556 360 loadbang;
 #X obj 416 338 loadbang;
-#X text 19 78 Hello echo! Caution: this can become really loud if you've
-got no Headphones!;
 #X obj 18 556 lop~ 900;
-#X text 19 603 Max Neupert \, GMU - Bauhaus University Weimar 2009
-;
+#X text 19 78 Hello echo! Caution: this can become really loud if you've
+got no headphones!;
+#X text 19 603 Max Neupert - Bauhaus University Weimar 2009-2012;
 #X connect 0 0 9 0;
 #X connect 4 0 9 0;
 #X connect 5 0 13 0;
@@ -86,7 +85,7 @@ got no Headphones!;
 #X connect 22 0 14 4;
 #X connect 23 0 21 4;
 #X connect 24 0 27 0;
-#X connect 25 0 50 0;
+#X connect 25 0 49 0;
 #X connect 26 0 25 0;
 #X connect 27 0 25 0;
 #X connect 28 0 42 1;
@@ -108,5 +107,5 @@ got no Headphones!;
 #X connect 46 0 23 0;
 #X connect 47 0 30 0;
 #X connect 48 0 28 0;
-#X connect 50 0 7 1;
-#X connect 50 0 7 0;
+#X connect 49 0 7 1;
+#X connect 49 0 7 0;

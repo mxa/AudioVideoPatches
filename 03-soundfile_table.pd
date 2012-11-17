@@ -1,4 +1,4 @@
-#N canvas -812 63 596 632 10;
+#N canvas 429 125 648 664 10;
 #X obj 35 -4 cnv 15 480 60 empty empty Soundfile_from_memory 20 30
 0 20 -262130 -99865 0;
 #N canvas 0 22 450 300 (subpatch) 0;
@@ -10,9 +10,9 @@
 #X obj 299 272 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
 #X obj 37 445 dac~;
-#X floatatom 312 536 20 0 0 0 - - -;
-#X floatatom 326 509 20 0 0 0 - - -;
-#X obj 326 459 / 48;
+#X floatatom 312 538 20 0 0 0 - - -;
+#X floatatom 326 511 20 0 0 0 - - -;
+#X obj 326 461 / 48;
 #X obj 299 431 t f f;
 #X msg 67 309 1 \, 193798 4037.46 \;;
 #X obj 37 210 *;
@@ -27,8 +27,8 @@
 #X obj 299 361 pack s s;
 #X obj 344 340 symbol \$0-soundfile;
 #X obj 52 178 r \$0-samples;
-#X obj 301 559 s \$0-samples;
-#X obj 337 484 s \$0-miliseconds;
+#X obj 301 561 s \$0-samples;
+#X obj 337 486 s \$0-miliseconds;
 #X text 293 75 An array holds the sample:;
 #X text 320 272 open a soundfile and store it;
 #N canvas 195 129 450 300 preset 0;
@@ -51,15 +51,14 @@
 #X connect 7 0 0 0;
 #X restore 67 284 pd preset;
 #X text 185 310 play it whole;
-#X text 340 440 samplingrate of 48 kHz is assumed here;
+#X text 359 460 samplingrate of 48 kHz is assumed here;
 #X obj 275 268 cnv 15 20 20 empty empty 1 6 10 0 14 -261234 -66577
 0;
 #X obj 43 306 cnv 15 20 20 empty empty 2 6 10 0 14 -261234 -66577 0
 ;
 #X obj 14 116 cnv 15 20 20 empty empty 2 6 10 0 14 -261234 -66577 0
 ;
-#X text 18 590 Max Neupert \, GMU - Bauhaus-University Weimar 2009-2012
-;
+#X text 18 618 Max Neupert - Bauhaus-University Weimar 2009-2012;
 #X connect 2 0 9 0;
 #X connect 3 0 18 0;
 #X connect 4 0 3 0;

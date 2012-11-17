@@ -1,4 +1,4 @@
-#N canvas 0 112 596 616 10;
+#N canvas 53 137 596 616 10;
 #X obj 21 13 cnv 15 480 60 empty empty Vocabulary 20 30 0 20 -262130
 -99865 0;
 #X obj 95 275 cnv 15 55 24 empty empty empty 20 12 0 14 -33529 -66577
@@ -30,8 +30,7 @@
 #X text 175 324 3 objects have one or more cold inlets;
 #X text 175 289 1 Pd has edit-mode and run-mode;
 #X text 30 232 Objects receive messages to act upon.;
-#X text 22 573 Max Neupert \, GMU - Bauhaus-University Weimar 2009
-;
+#X text 22 573 Max Neupert - Bauhaus-University Weimar 2009;
 #X connect 2 0 4 0;
 #X connect 3 0 2 1;
 #X connect 6 0 2 0;

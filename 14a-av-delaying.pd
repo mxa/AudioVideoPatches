@@ -1,12 +1,12 @@
-#N canvas 601 45 550 624 10;
+#N canvas 589 64 550 624 10;
 #X declare -lib Gem;
-#X msg 291 174 0 \, destroy;
-#N canvas 0 22 187 156 init 0;
+#X msg 289 174 0 \, destroy;
+#N canvas 1257 284 187 156 init 0;
 #X obj 25 26 loadbang;
 #X msg 34 51 \; pd dsp 1;
 #X obj 25 6 declare -lib Gem;
 #X obj 25 108 s \$0-volume;
-#X msg 25 87 0.6;
+#X msg 25 87 0.2;
 #X connect 0 0 1 0;
 #X connect 0 0 4 0;
 #X connect 4 0 3 0;
@@ -15,19 +15,19 @@
 0;
 #X obj 12 12 cnv 15 480 60 empty empty A/V_delay 20 30 0 20 -262130
 -99865 0;
-#X msg 284 152 reset \, create \, 1;
+#X msg 282 152 reset \, create \, 1;
 #X obj 287 352 gemhead;
 #X obj 287 397 pix_video;
 #X obj 34 532 dac~;
 #X obj 282 207 gemwin 20;
-#X obj 287 487 pix_texture;
-#X obj 287 510 rectangle 4 3;
+#X obj 287 499 pix_texture;
+#X obj 287 522 rectangle 4 3;
 #X obj 34 476 vd~ \$0-memory;
 #X obj 34 445 sig~ 0;
-#X msg 33 400 \$1 10;
+#X msg 34 400 \$1 10;
 #X obj 34 422 line;
-#X obj 36 292 hsl 200 15 0 99 0 0 empty empty empty -2 -8 0 10 -262144
--1 -1 4300 1;
+#X obj 37 292 hsl 200 15 0 99 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 2800 1;
 #X obj 287 454 pix_delay 100;
 #N canvas 895 501 450 300 frames2ms 1;
 #X obj 49 43 inlet;
@@ -37,20 +37,19 @@
 #X connect 0 0 3 0;
 #X connect 2 0 1 0;
 #X connect 3 0 2 0;
-#X restore 33 356 pd frames2ms;
-#X obj 33 324 t f f;
+#X restore 34 356 pd frames2ms;
+#X obj 34 324 t f f;
 #X obj 29 213 delwrite~ \$0-memory 4950;
 #X obj 34 505 *~;
 #X obj 132 478 line~;
 #X msg 132 454 \$1 10;
 #X obj 132 395 vsl 15 49 0 1 0 0 empty \$0-volume empty 0 -9 0 10 -262144
--1 -1 2880 1;
+-1 -1 1800 1;
 #X text 151 409 volume;
 #X obj 29 170 adc~ 1;
 #X text 19 78 Let's build and audiovisual delay;
 #X text 19 91 To avoid feed-back headphones are advised;
-#X text 28 561 Max Neupert \, GMU - Bauhaus University Weimar 2009
-;
+#X text 28 561 Max Neupert - Bauhaus University Weimar 2009-2012;
 #X connect 0 0 8 0;
 #X connect 4 0 8 0;
 #X connect 5 0 6 0;

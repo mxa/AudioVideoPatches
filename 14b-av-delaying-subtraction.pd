@@ -27,15 +27,15 @@
 #X msg 44 414 \$1 10;
 #X obj 44 436 line;
 #X obj 47 176 hsl 200 15 0 99 0 0 empty empty empty -2 -8 0 10 -262144
--1 -1 12600 1;
+-1 -1 7800 1;
 #X obj 373 363 pix_delay 100;
 #N canvas 992 481 229 183 frames2ms 0;
 #X obj 14 10 inlet;
 #X obj 14 120 outlet;
 #X obj 14 95 / 20;
 #X obj 14 36 * 1000;
-#X obj 33 67 t b f;
-#X obj 70 43 r \$0-frames;
+#X obj 58 57 t b f;
+#X obj 58 36 r \$0-frames;
 #X connect 0 0 3 0;
 #X connect 2 0 1 0;
 #X connect 3 0 2 0;
@@ -57,11 +57,10 @@
 #X obj 156 496 line~;
 #X msg 156 472 \$1 10;
 #X obj 156 413 vsl 15 49 0 1 0 0 empty \$0-volume empty 0 -9 0 10 -262144
--1 -1 180 1;
+-1 -1 2680 1;
 #X text 175 427 volume;
 #X obj 300 195 r \$0-frames;
-#X text 28 601 Max Neupert \, GMU - Bauhaus University Weimar 2009
-;
+#X text 28 600 Max Neupert - Bauhaus University Weimar 2009;
 #X connect 0 0 8 0;
 #X connect 4 0 8 0;
 #X connect 5 0 6 0;
