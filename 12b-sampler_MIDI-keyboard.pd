@@ -1,4 +1,4 @@
-#N canvas 432 60 576 819 10;
+#N canvas 915 78 576 819 10;
 #X declare -lib Gem;
 #X declare -lib iemlib;
 #X declare -lib iemlib;
@@ -13,8 +13,8 @@
 #X obj 296 376 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
 #N canvas 0 22 450 300 (subpatch) 0;
-#X array \$0-soundfile 214603 float 2;
-#X coords 0 1 214603 -1 200 140 1;
+#X array \$0-soundfile 280265 float 2;
+#X coords 0 1 280265 -1 200 140 1;
 #X restore 40 155 graph;
 #N canvas 525 115 431 529 loading_files 0;
 #X obj 150 67 inlet;
@@ -60,11 +60,11 @@
 #X connect 18 0 5 0;
 #X restore 296 564 pd loading_files;
 #X obj 43 305 hsl 195 15 0 1 0 0 \$0-in \$0-in-init empty -2 -8 0 10
--262144 -1 -1 0 1;
+-262144 -1 -1 8300 1;
 #X obj 43 320 hsl 195 15 0 1 0 0 \$0-out \$0-out-init empty -2 -8 0
-10 -262144 -1 -1 19400 1;
+10 -262144 -1 -1 10100 1;
 #X obj 43 295 hsl 195 10 0 1 0 0 empty \$0-playhead empty -2 -8 0 10
--228856 -1 -1 0 1;
+-228856 -1 -1 8303 1;
 #X text 19 305 in;
 #X text 16 320 out;
 #X text -16 291 playhead;
@@ -128,7 +128,7 @@
 #X connect 26 0 9 0;
 #X restore 185 619 pd video_processing;
 #X obj 43 335 hsl 195 15 1 0.0001 0 0 \$0-speed \$0-speed-init empty
--2 -8 0 10 -262144 -1 -1 14551 1;
+-2 -8 0 10 -262144 -1 -1 14251 1;
 #X text 1 335 speed;
 #N canvas 0 22 450 300 init 0;
 #X obj 14 42 loadbang;
@@ -269,7 +269,7 @@
 #X connect 14 2 6 0;
 #X restore 40 646 pd envelope;
 #X obj 393 268 hsl 50 15 0 150 0 0 \$0-env \$0-env-init empty -2 -8
-0 10 -262144 -1 -1 0 1;
+0 10 -262144 -1 -1 500 1;
 #X obj 244 180 cnv 15 20 20 empty empty 1 6 10 0 14 -261234 -66577
 0;
 #X text 330 182 create Gem window;
@@ -282,7 +282,7 @@
 #X text 270 319 choose in \, out \, speed and envelope size;
 #X floatatom 390 288 5 0 0 0 - - -;
 #X obj 72 384 notein 1;
-#X obj 42 419 mtof;
+#X obj 40 419 mtof;
 #X obj 40 442 expr 440/$f1;
 #X obj 40 485 t b b f f;
 #X obj 40 743 *~;
