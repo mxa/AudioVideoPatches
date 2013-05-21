@@ -30,7 +30,7 @@
 #X text 175 324 3 objects have one or more cold inlets;
 #X text 175 289 1 Pd has edit-mode and run-mode;
 #X text 30 232 Objects receive messages to act upon.;
-#X text 22 573 Max Neupert - Bauhaus-University Weimar 2009;
+#X text 22 573 Max Neupert - Bauhaus-Universität Weimar 2009;
 #X connect 2 0 4 0;
 #X connect 3 0 2 1;
 #X connect 6 0 2 0;

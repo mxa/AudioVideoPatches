@@ -80,7 +80,7 @@ of the camera. Inspired by the Work of Oskar Fischinger:;
 #X obj 323 417 - 515;
 #X obj 323 439 abs;
 #X obj 332 284 mn-flip;
-#X text 22 716 Max Neupert - Bauhaus University Weimar 2008;
+#X text 22 716 Max Neupert - Bauhaus Universität Weimar 2008;
 #X connect 0 0 4 0;
 #X connect 1 0 4 0;
 #X connect 2 0 51 0;

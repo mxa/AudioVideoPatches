@@ -96,7 +96,7 @@
 #X obj 43 181 route open bang;
 #X obj 298 553 + 0.5;
 #X obj 272 647 translateXYZ \$2 \$3 \$4;
-#X text 39 733 Max Neupert - Bauhaus-University Weimar 2012;
+#X text 39 733 Max Neupert - Bauhaus-Universität Weimar 2012;
 #X connect 1 0 11 0;
 #X connect 1 0 30 0;
 #X connect 2 0 4 0;

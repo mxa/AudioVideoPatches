@@ -27,7 +27,8 @@ we are dealing with audio signals.;
 ;
 #X text 45 414 Remember to set the samplerate of Pd to the samplerate
 of the soundfile;
-#X text 26 581 Max Neupert - Bauhaus-University Weimar 2009-2012;
+#X text 26 581 Max Neupert - Bauhaus-Universität Weimar 2009-2012
+;
 #X connect 1 0 3 0;
 #X connect 2 0 1 0;
 #X connect 3 0 11 0;

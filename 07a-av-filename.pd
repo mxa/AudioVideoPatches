@@ -87,8 +87,6 @@
 #X obj 39 491 makefilename %s.aiff;
 #X obj 438 391 makefilename %s.mov;
 #X text 146 129 this is part of the iemlib external;
-#X text 39 709 Max Neupert \, GMU - Bauhaus-University Weimar 2009
-;
 #X text 556 513 this adjusts the rectangle;
 #X text 568 526 dimensions to fit to the;
 #X text 562 539 aspect ratio of the video;
@@ -111,6 +109,8 @@
 #X connect 2 0 3 0;
 #X restore 508 15 pd init;
 #X obj 298 531 + 0.5;
+#X text 39 709 Max Neupert \, GMU - Bauhaus-Universität Weimar 2009
+;
 #X connect 2 0 18 0;
 #X connect 2 0 39 0;
 #X connect 3 0 5 0;
@@ -128,7 +128,7 @@
 #X connect 14 0 15 0;
 #X connect 15 0 2 0;
 #X connect 16 0 14 0;
-#X connect 17 0 70 0;
+#X connect 17 0 69 0;
 #X connect 18 0 20 0;
 #X connect 19 0 42 0;
 #X connect 19 1 18 0;
@@ -157,9 +157,9 @@
 #X connect 48 0 3 0;
 #X connect 51 0 54 0;
 #X connect 52 0 51 0;
-#X connect 54 0 68 0;
+#X connect 54 0 67 0;
 #X connect 55 0 45 0;
 #X connect 56 0 12 0;
-#X connect 62 0 56 0;
-#X connect 63 0 55 0;
-#X connect 70 0 21 0;
+#X connect 61 0 56 0;
+#X connect 62 0 55 0;
+#X connect 69 0 21 0;

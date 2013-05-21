@@ -1,4 +1,4 @@
-#N canvas 643 64 570 726 10;
+#N canvas 654 53 570 726 10;
 #X declare -lib Gem;
 #X declare -lib iemlib;
 #X declare -lib iemlib;
@@ -13,8 +13,8 @@
 #X obj 296 376 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
 #N canvas 0 22 450 300 (subpatch) 0;
-#X array \$0-soundfile 214603 float 2;
-#X coords 0 1 214603 -1 200 140 1;
+#X array \$0-soundfile 214599 float 2;
+#X coords 0 1 214599 -1 200 140 1;
 #X restore 40 155 graph;
 #N canvas 525 115 431 529 loading_files 0;
 #X obj 150 67 inlet;
@@ -60,15 +60,15 @@
 #X connect 18 0 5 0;
 #X restore 296 564 pd loading_files;
 #X obj 43 305 hsl 195 15 0 1 0 0 \$0-in \$0-in-init empty -2 -8 0 10
--262144 -1 -1 0 1;
+-262144 -1 -1 7200 1;
 #X obj 43 320 hsl 195 15 0 1 0 0 \$0-out \$0-out-init empty -2 -8 0
-10 -262144 -1 -1 19400 1;
+10 -262144 -1 -1 9700 1;
 #X obj 43 295 hsl 195 10 0 1 0 0 empty \$0-playhead empty -2 -8 0 10
--228856 -1 -1 0 1;
+-228856 -1 -1 9489 1;
 #X text 19 305 in;
 #X text 16 320 out;
 #X text -16 291 playhead;
-#N canvas 848 516 574 406 video_processing 1;
+#N canvas 848 516 574 406 video_processing 0;
 #X obj 142 16 inlet~;
 #X obj 274 15 inlet;
 #X obj -17 296 pix_texture;
@@ -128,7 +128,7 @@
 #X connect 26 0 9 0;
 #X restore 185 589 pd video_processing;
 #X obj 43 335 hsl 195 15 1 0.0001 0 0 \$0-speed \$0-speed-init empty
--2 -8 0 10 -262144 -1 -1 14551 1;
+-2 -8 0 10 -262144 -1 -1 15551 1;
 #X text 1 335 speed;
 #N canvas 0 22 450 300 init 0;
 #X obj 14 42 loadbang;
@@ -227,7 +227,7 @@
 #X connect 12 1 15 0;
 #X connect 14 0 12 0;
 #X restore 67 417 pd speed;
-#X obj 40 375 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+#X obj 40 375 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
 1;
 #X obj 40 462 metro;
 #X text 57 372 play looping;
@@ -238,7 +238,7 @@
 #X obj 267 266 gemwin 30;
 #N canvas 990 327 450 300 envelope 0;
 #X obj 32 32 inlet~;
-#X obj 36 266 outlet~;
+#X obj 35 264 outlet~;
 #X obj 35 237 *~;
 #X obj 94 38 inlet;
 #X obj 191 109 delay;
@@ -272,7 +272,7 @@
 #X restore 40 616 pd envelope;
 #X obj 67 439 t f f f;
 #X obj 393 268 hsl 50 15 0 150 0 0 \$0-env \$0-env-init empty -2 -8
-0 10 -262144 -1 -1 0 1;
+0 10 -262144 -1 -1 1400 1;
 #X obj 244 180 cnv 15 20 20 empty empty 1 6 10 0 14 -261234 -66577
 0;
 #X text 330 182 create Gem window;
@@ -289,12 +289,15 @@
 #X text 18 78 to avoid clicks at the loop point we can ad small fade-ins
 and fade-outs. Notice the effect when setting the envelope to zero
 and then slowly increasing it while the video loops.;
-#X text 39 668 Max Neupert - Bauhaus University Weimar 2010-2012;
+#X text 39 668 Max Neupert - Bauhaus-Universität Weimar 2010-2012
+;
 #X connect 2 0 5 0;
+#X connect 2 0 15 0;
 #X connect 3 0 29 0;
 #X connect 4 0 29 0;
 #X connect 5 0 30 0;
 #X connect 6 0 8 0;
+#X connect 8 0 15 2;
 #X connect 19 0 2 0;
 #X connect 20 0 19 0;
 #X connect 21 0 31 0;
@@ -305,6 +308,7 @@ and then slowly increasing it while the video loops.;
 #X connect 28 0 27 0;
 #X connect 30 0 1 1;
 #X connect 30 0 1 0;
+#X connect 30 1 15 1;
 #X connect 31 0 23 1;
 #X connect 31 1 20 1;
 #X connect 31 2 30 2;

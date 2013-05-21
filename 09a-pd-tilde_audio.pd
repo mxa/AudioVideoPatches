@@ -102,7 +102,7 @@
 #X text -246 142 http://apt.puredata.info/auto-build/latest/;
 #X text -246 75 To use the pd~ object you must use Pd > 0.42 and must
 be on Linux or OSX. There will be no Windows version of pd~.;
-#X text -241 735 Max Neupert - Bauhaus University Weimar 2009-2012
+#X text -241 735 Max Neupert - Bauhaus Universität Weimar 2009-2012
 ;
 #X connect 1 0 14 0;
 #X connect 1 0 26 0;

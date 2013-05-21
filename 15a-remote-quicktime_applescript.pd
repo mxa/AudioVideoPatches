@@ -1,4 +1,4 @@
-#N canvas 623 97 570 648 10;
+#N canvas 623 97 569 540 10;
 #X declare -lib GEM;
 #X declare -lib zexy;
 #X declare -lib motex;
@@ -37,7 +37,7 @@ file "QuickTime Player.app" of folder "Applications" of startup disk'
 through AppleScript.;
 #X text 27 16 Sometimes you may simply want to trigger a playback of
 a video with Pure Data.;
-#X text 43 432 Max Neupert - Bauhaus-University Weimar 2011;
+#X text 33 427 Max Neupert - Bauhaus-Universität Weimar 2011;
 #X connect 2 0 5 0;
 #X connect 3 0 2 0;
 #X connect 5 0 4 0;

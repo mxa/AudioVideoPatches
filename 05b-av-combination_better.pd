@@ -93,7 +93,7 @@
 #X connect 1 0 2 0;
 #X restore 448 81 pd init;
 #X obj 322 509 + 0.5;
-#X text 22 715 Max Neupert - Bauhaus-University Weimar 2009;
+#X text 22 715 Max Neupert - Bauhaus-Universität Weimar 2009;
 #X connect 2 0 31 0;
 #X connect 2 0 47 0;
 #X connect 3 0 7 0;

@@ -340,7 +340,7 @@
 #X connect 50 0 44 0;
 #X restore 271 220 pd recorder;
 #X text 370 240 # frames;
-#X text 39 635 Max Neupert \, GMU - Bauhaus-University Weimar 2012
+#X text 39 635 Max Neupert \, GMU - Bauhaus-Universität Weimar 2012
 ;
 #X connect 2 0 6 0;
 #X connect 2 0 17 0;

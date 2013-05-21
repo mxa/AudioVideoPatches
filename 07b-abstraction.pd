@@ -12,7 +12,7 @@
 #X obj 71 322 *;
 #X msg 71 344 \$1 50;
 #X obj 74 281 hsl 128 15 0 1 0 0 empty empty empty -2 -8 0 10 -262144
--1 -1 3900 1;
+-1 -1 0 1;
 #X text 47 142 Gem window;
 #X obj 86 300 r \$0-samples;
 #X obj 26 162 cnv 15 20 20 empty empty 1 6 10 0 14 -261234 -66577 0
@@ -26,8 +26,6 @@
 #X msg -66 24 \; pd dsp 1;
 #X connect 2 0 3 0;
 #X restore 445 81 pd init;
-#X text 34 519 Max Neupert \, GMU - Bauhaus-University Weimar 2012
-;
 #X floatatom 154 445 9 0 0 0 - - -;
 #X obj 51 474 dac~;
 #X msg 51 253 bang;
@@ -44,17 +42,19 @@
 #X text 29 72 This patch shows how to make use of the previous patch
 as an abstraction. An Abstraction is just another patch loaded into
 a parent patch. Click on avplayer~ to look inside.;
+#X text 34 519 Max Neupert \, GMU - Bauhaus-Universität Weimar 2012
+;
 #X connect 2 0 1 0;
 #X connect 3 0 1 0;
 #X connect 4 0 5 0;
-#X connect 5 0 23 0;
+#X connect 5 0 22 0;
 #X connect 6 0 4 0;
 #X connect 8 0 4 1;
-#X connect 15 0 23 0;
-#X connect 17 0 20 0;
-#X connect 18 0 17 0;
-#X connect 20 0 23 0;
-#X connect 23 0 14 0;
-#X connect 23 0 14 1;
-#X connect 23 1 13 0;
-#X connect 23 1 16 0;
+#X connect 14 0 22 0;
+#X connect 16 0 19 0;
+#X connect 17 0 16 0;
+#X connect 19 0 22 0;
+#X connect 22 0 13 0;
+#X connect 22 0 13 1;
+#X connect 22 1 12 0;
+#X connect 22 1 15 0;

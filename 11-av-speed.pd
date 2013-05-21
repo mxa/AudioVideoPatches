@@ -11,8 +11,6 @@
 #X msg 291 141 0 \, destroy;
 #X obj 43 241 hsl 195 15 0 1 0 0 \$0-scratch empty empty -2 -8 0 10
 -262144 -1 -1 0 1;
-#X text 39 635 Max Neupert \, GMU - Bauhaus University Weimar 2009
-;
 #X obj 40 557 tabread4~ \$0-soundfile;
 #X obj 383 335 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
@@ -90,7 +88,7 @@
 #X text 16 271 out;
 #X text -8 242 scratch;
 #X text -16 227 playhead;
-#N canvas 36 128 580 428 video_processing 1;
+#N canvas 36 128 580 428 video_processing 0;
 #X obj 175 33 inlet~;
 #X obj 270 32 inlet;
 #X obj 16 322 pix_texture;
@@ -271,22 +269,24 @@
 #X text 151 345 play or loop;
 #X obj 11 348 cnv 15 20 20 empty empty 4 6 10 0 14 -261234 -66577 0
 ;
-#X connect 2 0 7 0;
-#X connect 2 0 19 0;
-#X connect 3 0 36 0;
-#X connect 4 0 36 0;
-#X connect 7 0 1 0;
-#X connect 7 0 1 1;
-#X connect 8 0 10 0;
-#X connect 10 0 19 1;
-#X connect 14 0 2 0;
-#X connect 23 0 2 0;
-#X connect 24 0 23 0;
-#X connect 25 0 26 0;
-#X connect 26 0 28 1;
-#X connect 26 1 24 1;
-#X connect 27 0 28 0;
-#X connect 28 0 24 0;
-#X connect 31 0 24 0;
-#X connect 34 0 36 0;
-#X connect 35 0 34 0;
+#X text 39 635 Max Neupert \, GMU - Bauhaus-Universität Weimar 2009
+;
+#X connect 2 0 6 0;
+#X connect 2 0 18 0;
+#X connect 3 0 35 0;
+#X connect 4 0 35 0;
+#X connect 6 0 1 0;
+#X connect 6 0 1 1;
+#X connect 7 0 9 0;
+#X connect 9 0 18 1;
+#X connect 13 0 2 0;
+#X connect 22 0 2 0;
+#X connect 23 0 22 0;
+#X connect 24 0 25 0;
+#X connect 25 0 27 1;
+#X connect 25 1 23 1;
+#X connect 26 0 27 0;
+#X connect 27 0 23 0;
+#X connect 30 0 23 0;
+#X connect 33 0 35 0;
+#X connect 34 0 33 0;

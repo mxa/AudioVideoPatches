@@ -33,7 +33,7 @@ data \, GEM to play video;
 #X text 324 450 (and optional: the default clip to load);
 #X obj 35 534 square 2;
 #X msg 34 194 create \, 1;
-#X text 26 659 Max Neupert - Bauhaus-University Weimar 2009;
+#X text 26 659 Max Neupert - Bauhaus-Universität Weimar 2009;
 #X connect 3 0 2 0;
 #X connect 6 0 23 0;
 #X connect 7 0 20 0;

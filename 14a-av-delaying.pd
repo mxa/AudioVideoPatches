@@ -1,4 +1,4 @@
-#N canvas 589 64 550 624 10;
+#N canvas 588 133 550 624 10;
 #X declare -lib Gem;
 #X msg 289 174 0 \, destroy;
 #N canvas 1257 284 187 156 init 0;
@@ -27,9 +27,9 @@
 #X msg 34 400 \$1 10;
 #X obj 34 422 line;
 #X obj 37 292 hsl 200 15 0 99 0 0 empty empty empty -2 -8 0 10 -262144
--1 -1 2800 1;
+-1 -1 7600 1;
 #X obj 287 454 pix_delay 100;
-#N canvas 895 501 450 300 frames2ms 1;
+#N canvas 895 501 450 300 frames2ms 0;
 #X obj 49 43 inlet;
 #X obj 49 175 outlet;
 #X obj 49 132 / 20;
@@ -44,12 +44,13 @@
 #X obj 132 478 line~;
 #X msg 132 454 \$1 10;
 #X obj 132 395 vsl 15 49 0 1 0 0 empty \$0-volume empty 0 -9 0 10 -262144
--1 -1 1800 1;
+-1 -1 960 1;
 #X text 151 409 volume;
 #X obj 29 170 adc~ 1;
 #X text 19 78 Let's build and audiovisual delay;
-#X text 19 91 To avoid feed-back headphones are advised;
-#X text 28 561 Max Neupert - Bauhaus University Weimar 2009-2012;
+#X text 28 561 Max Neupert - Bauhaus-Universität Weimar 2009-2012
+;
+#X text 19 91 To avoid feed-back headphones are advised !;
 #X connect 0 0 8 0;
 #X connect 4 0 8 0;
 #X connect 5 0 6 0;

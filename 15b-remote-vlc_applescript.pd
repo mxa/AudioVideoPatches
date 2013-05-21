@@ -43,7 +43,7 @@ AppleScript.;
 #X msg 213 242 previous;
 #X msg 277 243 next;
 #X text 316 242 playlist;
-#X text 25 501 Max Neupert - Bauhaus-University Weimar 2011;
+#X text 25 501 Max Neupert - Bauhaus-Universität Weimar 2011;
 #X connect 2 0 17 0;
 #X connect 3 0 2 0;
 #X connect 6 0 7 0;

@@ -7,7 +7,7 @@
 #X coords 0 1 515 0 200 140 1;
 #X restore 249 539 graph;
 #X obj 21 444 hsl 128 15 0 127 0 0 empty \$0-tone empty -2 -8 0 10
--262144 -1 -1 7400 1;
+-262144 -1 -1 4000 1;
 #X obj 95 485 mtof;
 #X obj 18 684 dac~;
 #X msg 31 174 frame \$1;
@@ -37,27 +37,27 @@
 ;
 #X obj 351 267 rotateXYZ;
 #X obj 371 218 hsl 100 15 0 360 0 0 empty \$0-torusX empty -2 -8 0
-10 -262144 -1 -1 6517 1;
+10 -262144 -1 -1 0 1;
 #X obj 12 -10 cnv 15 480 60 empty empty Gem_to_wavetable 20 30 0 20
 -262130 -99865 0;
 #X obj 388 242 hsl 100 15 0 360 0 0 empty \$0-torusY empty -2 -8 0
-10 -262144 -1 -1 6435 1;
+10 -262144 -1 -1 0 1;
 #X obj 18 392 world_light;
 #X obj 19 289 gemhead 10;
 #X obj 351 183 gemhead 20;
 #X obj 19 370 rotateXYZ;
 #X obj 56 350 hsl 100 15 0 360 0 0 empty \$0-lightY empty -2 -8 0 10
--262144 -1 -1 1375 1;
+-262144 -1 -1 2475 1;
 #X obj 39 331 hsl 100 15 0 360 0 0 empty \$0-lightX empty -2 -8 0 10
--262144 -1 -1 9075 1;
+-262144 -1 -1 0 1;
 #X obj 351 335 torus 2 40 0.5;
 #X obj 381 294 hsl 100 15 0.06 3 0 0 empty \$0-torussize empty -2 -8
-0 10 -262144 -1 -1 5623 1;
+0 10 -262144 -1 -1 1818 1;
 #X obj 435 313 hsl 100 15 0.06 2 0 0 empty \$0-torusR empty -2 -8 0
-10 -262144 -1 -1 3164 1;
+10 -262144 -1 -1 4797 1;
 #X obj 18 651 *~ 0.3;
 #X obj 494 170 tgl 15 0 empty \$0-oscillate empty 17 7 0 10 -262144
--1 -1 1 1;
+-1 -1 0 1;
 #X obj 494 214 f;
 #X obj 522 214 + 1;
 #X obj 549 214 % 360;
@@ -120,10 +120,10 @@
 #X restore 351 129 pd presets;
 #X floatatom 533 170 5 0 0 0 - #0-speed -;
 #X obj 351 108 hradio 15 1 0 9 empty \$0-preset empty 0 -8 0 10 -262144
--1 -1 8;
+-1 -1 0;
 #X msg 41 212 color \$1 \$1 \$1;
 #X obj 44 194 hsl 100 15 0 1 0 0 empty \$0-grey empty -2 -8 0 10 -262144
--1 -1 495 1;
+-1 -1 0 1;
 #N canvas 0 22 450 300 (subpatch) 0;
 #X array \$0-x-axis 515 float 2;
 #X coords 0 1 515 0 200 140 1;
@@ -240,7 +240,7 @@
 #X restore 216 211 pd y-axis;
 #X msg 16 108 reset \, dimen 516 516 \, FSAA 4 \, lighting 1 \, create
 \, 1;
-#X text 21 706 Max Neupert \, GMU - Bauhaus University Weimar 2010
+#X text 21 706 Max Neupert \, GMU - Bauhaus-Universität Weimar 2010
 ;
 #X connect 0 0 37 0;
 #X connect 2 0 15 0;

@@ -55,7 +55,8 @@ start;
 #X obj -7 114 cnv 15 20 20 empty empty 2 6 10 0 14 -261234 -66577 0
 ;
 #X obj 178 407 + 0.5;
-#X text 19 578 Max Neupert - Bauhaus-University Weimar 2009-2012;
+#X text 19 578 Max Neupert - Bauhaus-Universität Weimar 2009-2012
+;
 #X connect 1 0 25 0;
 #X connect 2 0 25 0;
 #X connect 3 0 10 0;
