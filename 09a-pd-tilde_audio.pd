@@ -1,4 +1,4 @@
-#N canvas 521 97 528 766 10;
+#N canvas 236 99 528 766 10;
 #X declare -lib iemlib;
 #X obj -242 705 dac~;
 #X obj -243 478 vline~;
@@ -84,9 +84,7 @@
 #X restore 181 76 pd init;
 #X obj -153 277 t a a;
 #X obj -27 701 print pd-tilde;
-#X text -246 101 To download a new version go to http://puredata.info/downloads
-;
-#X text -246 128 Or try a nightly build:;
+#X text -246 113 Or try a nightly build:;
 #X obj -21 610 cnv 15 20 20 empty empty 1 6 10 0 14 -261234 -66577
 0;
 #X msg 1 613 pd~ start -lib Gem 09b-pd-tilde_video.pd;
@@ -99,11 +97,17 @@
 #X text -17 555 The pd~ object allows you to open a patch;
 #X text -16 568 in a seperate process. This lets you take;
 #X text -16 580 advantage of multiple processors or cores.;
-#X text -246 142 http://apt.puredata.info/auto-build/latest/;
-#X text -246 75 To use the pd~ object you must use Pd > 0.42 and must
-be on Linux or OSX. There will be no Windows version of pd~.;
-#X text -241 735 Max Neupert - Bauhaus Universität Weimar 2009-2012
+#X text -241 735 Max Neupert - Bauhaus Universität Weimar 2009-2013
 ;
+#X text -246 71 To use the pd~ object you must use Pd > 0.42 (MS Windows:
+Pd > 0.45).;
+#X obj -106 113 pddp/pddplink http://apt.puredata.info/auto-build/latest/
+;
+#X obj -51 98 pddp/pddplink http://puredata.info/downloads;
+#X text -246 98 To download a new version go to:;
+#X text -245 128 Note: the network socket solution in 08a+b has a better
+performance and less drop outs with heavy patches \, while the pd~
+approach may be more user-friendly.;
 #X connect 1 0 14 0;
 #X connect 1 0 26 0;
 #X connect 3 0 4 0;
@@ -131,4 +135,4 @@ be on Linux or OSX. There will be no Windows version of pd~.;
 #X connect 26 0 0 1;
 #X connect 29 0 11 0;
 #X connect 29 1 20 0;
-#X connect 34 0 21 0;
+#X connect 33 0 21 0;
