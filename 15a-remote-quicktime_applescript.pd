@@ -1,43 +1,42 @@
-#N canvas 623 97 569 540 10;
-#X declare -lib GEM;
+#N canvas 617 103 569 540 10;
 #X declare -lib zexy;
 #X declare -lib motex;
-#X obj 412 -41 import GEM;
-#X obj 18 -57 cnv 15 480 60 empty empty QuickTime_Player+AppleScript
+#X obj 414 31 import GEM;
+#X obj 20 15 cnv 15 480 60 empty empty QuickTime_Player+AppleScript
 20 30 0 20 -262130 -99865 0;
-#X obj 44 333 zexy/list2symbol;
-#X obj 44 311 list;
-#X obj 27 383 motex/system;
-#X msg 44 357 osascript -e 'tell application "QuickTime Player" to
+#X obj 46 405 zexy/list2symbol;
+#X obj 46 383 list;
+#X obj 29 455 motex/system;
+#X msg 46 429 osascript -e 'tell application "QuickTime Player" to
 \$1' &;
-#N canvas 0 22 231 126 init 0;
+#N canvas 0 83 231 126 init 0;
 #X obj 44 27 declare -lib zexy;
 #X obj 43 49 declare -lib motex;
-#X restore 449 47 pd init;
-#X obj 44 154 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+#X restore 451 119 pd init;
+#X obj 46 226 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
 -1;
-#X obj 44 174 openpanel;
-#X msg 212 188 play document 1;
-#X msg 27 102 osascript -e 'tell application "Finder" to open application
+#X obj 46 246 openpanel;
+#X msg 214 260 play document 1;
+#X msg 29 174 osascript -e 'tell application "Finder" to open application
 file "QuickTime Player.app" of folder "Applications" of startup disk'
 &;
-#X obj 44 195 zexy/symbol2list /;
-#X obj 44 215 zexy/list2symbol :;
-#X msg 44 236 open file "\$1";
-#X msg 212 238 stop document 1;
-#X msg 212 211 pause document 1;
-#X msg 212 265 present document 1;
-#X text 326 187 Play;
-#X text 327 210 Pause;
-#X text 330 234 Stop;
-#X text 334 266 Play fullscreen;
-#X text 65 153 Open QuickTime document;
-#X text 391 115 open QuickTime application;
-#X text 29 53 In OS X you may control QuickTime from within Pure Data
+#X obj 46 267 zexy/symbol2list /;
+#X obj 46 287 zexy/list2symbol :;
+#X msg 46 308 open file "\$1";
+#X msg 214 310 stop document 1;
+#X msg 214 283 pause document 1;
+#X msg 214 337 present document 1;
+#X text 328 259 Play;
+#X text 334 284 Pause;
+#X text 332 306 Stop;
+#X text 350 338 Play fullscreen;
+#X text 67 225 Open QuickTime document;
+#X text 393 187 open QuickTime application;
+#X text 31 125 In OS X you may control QuickTime from within Pure Data
 through AppleScript.;
-#X text 27 16 Sometimes you may simply want to trigger a playback of
+#X text 29 88 Sometimes you may simply want to trigger a playback of
 a video with Pure Data.;
-#X text 33 427 Max Neupert - Bauhaus-Universität Weimar 2011;
+#X text 35 499 Max Neupert - Bauhaus-Universität Weimar 2011;
 #X connect 2 0 5 0;
 #X connect 3 0 2 0;
 #X connect 5 0 4 0;

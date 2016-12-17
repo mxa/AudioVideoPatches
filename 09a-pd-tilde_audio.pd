@@ -1,20 +1,19 @@
-#N canvas 236 99 528 766 10;
-#X declare -lib iemlib;
-#X obj -242 705 dac~;
-#X obj -243 478 vline~;
-#N canvas 0 22 450 300 sample 0;
-#N canvas 0 22 450 300 (subpatch) 0;
+#N canvas 233 102 593 783 10;
+#X obj 24 707 dac~;
+#X obj 23 480 vline~;
+#N canvas 0 50 450 300 sample 0;
+#N canvas 0 50 450 300 (subpatch) 0;
 #X array \$0-soundfile 214603 float 2;
 #X coords 0 1 214603 -1 200 140 1;
 #X restore 17 27 graph;
-#X restore -241 179 pd sample;
-#X obj -243 429 *;
-#X msg -243 451 \$1 50;
-#X obj -240 388 hsl 128 15 0 1 0 0 empty empty empty -2 -8 0 10 -262144
+#X restore 25 181 pd sample;
+#X obj 23 431 *;
+#X msg 23 453 \$1 50;
+#X obj 26 390 hsl 128 15 0 1 0 0 empty empty empty -2 -8 0 10 -262144
 -1 -1 0 1;
-#X text -171 180 Storage for the sample;
-#X msg -180 453 1 \, 214603 4470.9 \;;
-#N canvas 762 22 266 228 laden 0;
+#X text 95 182 Storage for the sample;
+#X msg 86 455 1 \, 214603 4470.9 \;;
+#N canvas 762 50 266 228 laden 0;
 #X obj 14 161 outlet;
 #X obj 14 64 pack f f;
 #X obj 14 87 trigger list bang bang;
@@ -32,25 +31,24 @@
 #X connect 5 0 0 0;
 #X connect 6 0 1 0;
 #X connect 7 0 1 1;
-#X restore -180 430 pd laden;
-#X obj -153 228 openpanel;
-#X obj -153 210 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+#X restore 86 432 pd laden;
+#X obj 113 230 openpanel;
+#X obj 113 212 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
-#X obj -242 320 makefilename %s.aiff;
-#X obj -215 522 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1
-1 1;
-#X obj -215 542 metro 20;
-#X obj -215 564 snapshot~;
-#X obj -215 604 /;
-#X obj -215 624 change;
-#X obj -153 250 iemlib/splitfilename .;
-#X msg 11 641 pd~ stop;
-#X msg -215 644 frame \$1;
-#X msg -27 318 file \$1;
-#X obj -27 677 pd~ -sr 48000 -noutsig 0 -fifo 20;
-#X obj -225 407 r \$0-samples;
-#X obj -200 584 r \$0-samples;
-#X obj -215 500 loadbang;
+#X obj 24 322 makefilename %s.aiff;
+#X obj 51 524 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+1;
+#X obj 51 544 metro 20;
+#X obj 51 566 snapshot~;
+#X obj 51 606 /;
+#X obj 51 626 change;
+#X msg 277 643 pd~ stop;
+#X msg 51 646 frame \$1;
+#X msg 239 320 file \$1;
+#X obj 239 679 pd~ -sr 48000 -noutsig 0 -fifo 20;
+#X obj 41 409 r \$0-samples;
+#X obj 66 586 r \$0-samples;
+#X obj 51 502 loadbang;
 #N canvas 592 66 450 300 load_soundfile 0;
 #X obj -193 12 inlet;
 #X obj -193 126 soundfiler;
@@ -72,67 +70,68 @@
 #X connect 7 0 8 1;
 #X connect 8 0 9 0;
 #X connect 9 0 1 0;
-#X restore -242 340 pd load_soundfile;
-#X obj -242 677 tabread4~ \$0-soundfile;
-#X obj -252 6 cnv 15 480 60 empty empty pd~_AUDIO_parent_process 20
-30 0 20 -262130 -99865 0;
-#N canvas 115 467 450 300 init 0;
+#X restore 24 342 pd load_soundfile;
+#X obj 24 679 tabread4~ \$0-soundfile;
+#X obj 14 8 cnv 15 480 60 empty empty pd~_AUDIO_parent_process 20 30
+0 20 -262130 -99865 0;
+#N canvas 112 470 450 300 init 0;
 #X obj 32 29 loadbang;
 #X msg 32 52 \; pd dsp 1;
-#X obj 122 31 declare -lib iemlib;
+#X obj 122 31 iemlib/iemlib2;
 #X connect 0 0 1 0;
-#X restore 181 76 pd init;
-#X obj -153 277 t a a;
-#X obj -27 701 print pd-tilde;
-#X text -246 113 Or try a nightly build:;
-#X obj -21 610 cnv 15 20 20 empty empty 1 6 10 0 14 -261234 -66577
+#X restore 447 78 pd init;
+#X obj 113 279 t a a;
+#X obj 239 703 print pd-tilde;
+#X text 20 115 Or try a nightly build:;
+#X obj 245 612 cnv 15 20 20 empty empty 1 6 10 0 14 -261234 -66577
 0;
-#X msg 1 613 pd~ start -lib Gem 09b-pd-tilde_video.pd;
-#X obj -176 204 cnv 15 20 20 empty empty 3 6 10 0 14 -261234 -66577
-0;
-#X obj -266 384 cnv 15 20 20 empty empty 4 6 10 0 14 -261234 -66577
-0;
-#X obj -202 451 cnv 15 20 20 empty empty 4 6 10 0 14 -261234 -66577
-0;
-#X text -17 555 The pd~ object allows you to open a patch;
-#X text -16 568 in a seperate process. This lets you take;
-#X text -16 580 advantage of multiple processors or cores.;
-#X text -241 735 Max Neupert - Bauhaus Universität Weimar 2009-2013
+#X msg 267 615 pd~ start -lib Gem 09b-pd-tilde_video.pd;
+#X obj 90 206 cnv 15 20 20 empty empty 3 6 10 0 14 -261234 -66577 0
 ;
-#X text -246 71 To use the pd~ object you must use Pd > 0.42 (MS Windows:
+#X obj 0 386 cnv 15 20 20 empty empty 4 6 10 0 14 -261234 -66577 0
+;
+#X obj 64 453 cnv 15 20 20 empty empty 4 6 10 0 14 -261234 -66577 0
+;
+#X text 249 557 The pd~ object allows you to open a patch;
+#X text 250 570 in a seperate process. This lets you take;
+#X text 250 582 advantage of multiple processors or cores.;
+#X text 25 737 Max Neupert - Bauhaus Universität Weimar 2009-2013
+;
+#X text 20 73 To use the pd~ object you must use Pd > 0.42 (MS Windows:
 Pd > 0.45).;
-#X obj -106 113 pddp/pddplink http://apt.puredata.info/auto-build/latest/
+#X obj 160 115 pddp/pddplink http://apt.puredata.info/auto-build/latest/
 ;
-#X obj -51 98 pddp/pddplink http://puredata.info/downloads;
-#X text -246 98 To download a new version go to:;
-#X text -245 128 Note: the network socket solution in 08a+b has a better
+#X obj 215 100 pddp/pddplink http://puredata.info/downloads;
+#X text 20 100 To download a new version go to:;
+#X text 21 130 Note: the network socket solution in 08a+b has a better
 performance and less drop outs with heavy patches \, while the pd~
 approach may be more user-friendly.;
+#X obj 113 252 splitfilename .;
 #X connect 1 0 14 0;
-#X connect 1 0 26 0;
+#X connect 1 0 25 0;
 #X connect 3 0 4 0;
 #X connect 4 0 1 0;
 #X connect 5 0 3 0;
 #X connect 7 0 1 0;
 #X connect 8 0 7 0;
-#X connect 9 0 17 0;
+#X connect 9 0 45 0;
 #X connect 10 0 9 0;
-#X connect 11 0 25 0;
+#X connect 11 0 24 0;
 #X connect 12 0 13 0;
 #X connect 13 0 14 0;
 #X connect 14 0 15 0;
 #X connect 15 0 16 0;
-#X connect 16 0 19 0;
-#X connect 17 0 29 0;
-#X connect 18 0 21 0;
-#X connect 19 0 21 0;
-#X connect 20 0 21 0;
-#X connect 21 0 30 0;
-#X connect 22 0 3 1;
-#X connect 23 0 15 1;
-#X connect 24 0 12 0;
-#X connect 26 0 0 0;
-#X connect 26 0 0 1;
-#X connect 29 0 11 0;
-#X connect 29 1 20 0;
-#X connect 33 0 21 0;
+#X connect 16 0 18 0;
+#X connect 17 0 20 0;
+#X connect 18 0 20 0;
+#X connect 19 0 20 0;
+#X connect 20 0 29 0;
+#X connect 21 0 3 1;
+#X connect 22 0 15 1;
+#X connect 23 0 12 0;
+#X connect 25 0 0 0;
+#X connect 25 0 0 1;
+#X connect 28 0 11 0;
+#X connect 28 1 19 0;
+#X connect 32 0 20 0;
+#X connect 45 0 28 0;

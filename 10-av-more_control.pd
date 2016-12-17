@@ -1,24 +1,24 @@
-#N canvas 508 39 533 782 10;
+#N canvas 505 56 579 805 10;
 #X declare -lib Gem;
 #X declare -lib iemlib;
 #X declare -lib iemlib;
 #X declare -lib Gem;
-#X obj 14 -8 cnv 15 480 60 empty empty A/V_playback_with_more_parameters
+#X obj 54 9 cnv 15 480 60 empty empty A/V_playback_with_more_parameters
 20 30 0 20 -262130 -99865 0;
-#X obj 39 732 dac~;
-#X obj 39 658 vline~;
-#X obj 286 140 gemwin;
-#X msg 286 96 create \, 1;
-#X msg 298 118 0 \, destroy;
-#X obj 42 257 hsl 196 15 0 1 0 0 \$0-scratch empty empty -2 -8 0 10
+#X obj 79 749 dac~;
+#X obj 79 675 vline~;
+#X obj 326 157 gemwin;
+#X msg 326 113 create \, 1;
+#X msg 338 135 0 \, destroy;
+#X obj 82 274 hsl 196 15 0 1 0 0 \$0-scratch empty empty -2 -8 0 10
 -262144 -1 -1 0 1;
-#X obj 39 685 tabread4~ \$0-soundfile;
-#X obj 382 328 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+#X obj 79 702 tabread4~ \$0-soundfile;
+#X obj 422 345 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
-#N canvas 0 22 450 300 (subpatch) 0;
+#N canvas 0 50 450 300 (subpatch) 0;
 #X array \$0-soundfile 426015 float 2;
 #X coords 0 1 426015 -1 200 140 1;
-#X restore 40 96 graph;
+#X restore 80 113 graph;
 #N canvas 466 95 473 547 loading_files 0;
 #X obj 150 24 inlet;
 #X obj 176 436 outlet;
@@ -61,12 +61,12 @@
 #X connect 16 1 18 0;
 #X connect 17 0 9 0;
 #X connect 18 0 5 0;
-#X restore 382 349 pd loading_files;
-#X obj 42 276 hsl 196 15 0 1 0 0 \$0-in empty empty -2 -8 0 10 -262144
+#X restore 422 366 pd loading_files;
+#X obj 82 293 hsl 196 15 0 1 0 0 \$0-in empty empty -2 -8 0 10 -262144
 -1 -1 0 1;
-#X obj 42 294 hsl 196 15 0 1 0 0 \$0-out empty empty -2 -8 0 10 -262144
+#X obj 82 311 hsl 196 15 0 1 0 0 \$0-out empty empty -2 -8 0 10 -262144
 -1 -1 0 1;
-#X obj 43 236 hsl 195 10 0 1 0 0 empty \$0-playhead empty -2 -8 0 10
+#X obj 83 253 hsl 195 10 0 1 0 0 empty \$0-playhead empty -2 -8 0 10
 -228856 -1 -1 0 1;
 #N canvas 1033 208 146 180 scratch 0;
 #X obj 23 134 outlet;
@@ -78,20 +78,20 @@
 #X connect 2 0 1 1;
 #X connect 3 0 1 0;
 #X connect 4 0 0 0;
-#X restore -29 572 pd scratch;
-#X obj 39 547 pack f f;
-#X obj 39 572 t l b;
-#X obj 81 572 r \$0-in;
-#X text 17 275 in;
-#X text 11 292 out;
-#X text -8 256 scratch;
-#X text -16 232 playhead;
-#X obj 81 614 *;
-#X obj 66 635 f;
-#X obj 96 593 r \$0-samples;
-#X obj 76 495 *;
-#X obj 91 474 r \$0-samples;
-#X obj 76 452 r \$0-out;
+#X restore 1 589 pd scratch;
+#X obj 79 564 pack f f;
+#X obj 79 589 t l b;
+#X obj 121 589 r \$0-in;
+#X text 57 292 in;
+#X text 51 309 out;
+#X text 32 273 scratch;
+#X text 24 249 playhead;
+#X obj 121 631 *;
+#X obj 106 652 f;
+#X obj 136 610 r \$0-samples;
+#X obj 116 512 *;
+#X obj 131 491 r \$0-samples;
+#X obj 116 469 r \$0-out;
 #N canvas 1020 167 580 428 video_processing 0;
 #X obj 169 32 inlet~;
 #X obj 270 32 inlet;
@@ -147,40 +147,40 @@
 #X connect 22 0 5 1;
 #X connect 25 0 24 0;
 #X connect 26 0 9 0;
-#X restore 271 683 pd video_processing;
-#X obj 39 521 f;
-#X obj 66 521 f;
-#X obj 39 452 t b b;
-#X obj 171 335 r \$0-out;
-#X obj 197 356 r \$0-in;
-#X obj 212 377 r \$0-samples;
-#X obj 197 404 *;
-#X obj 171 452 -;
-#X obj 197 425 t b f;
-#X obj 171 475 / 48;
-#X obj 171 404 *;
-#X obj 171 497 abs;
-#X msg 39 335 bang;
-#N canvas 593 219 157 156 init 0;
+#X restore 311 700 pd video_processing;
+#X obj 79 538 f;
+#X obj 106 538 f;
+#X obj 79 469 t b b;
+#X obj 211 352 r \$0-out;
+#X obj 237 373 r \$0-in;
+#X obj 252 394 r \$0-samples;
+#X obj 237 421 *;
+#X obj 211 469 -;
+#X obj 237 442 t b f;
+#X obj 211 492 / 48;
+#X obj 211 421 *;
+#X obj 211 514 abs;
+#X msg 79 352 bang;
+#N canvas 590 249 157 156 init 0;
 #X obj 10 53 loadbang;
 #X msg 10 78 \; pd dsp 1;
 #X obj 8 10 declare -lib iemlib;
 #X obj 9 30 declare -lib Gem;
 #X connect 0 0 1 0;
-#X restore 394 63 pd init;
-#X obj 263 92 cnv 15 20 20 empty empty 1 6 10 0 14 -261234 -66577 0
-;
-#X text 349 95 create Gem window;
-#X obj 360 326 cnv 15 20 20 empty empty 2 6 10 0 14 -261234 -66577
+#X restore 434 80 pd init;
+#X obj 303 109 cnv 15 20 20 empty empty 1 6 10 0 14 -261234 -66577
 0;
-#X text 401 328 load files;
-#X obj 244 282 cnv 15 20 20 empty empty 3 6 10 0 14 -261234 -66577
+#X text 389 112 create Gem window;
+#X obj 400 343 cnv 15 20 20 empty empty 2 6 10 0 14 -261234 -66577
 0;
-#X text 265 283 set in and outpoint;
-#X obj 16 332 cnv 15 20 20 empty empty 4 6 10 0 14 -261234 -66577 0
+#X text 441 345 load files;
+#X obj 284 299 cnv 15 20 20 empty empty 3 6 10 0 14 -261234 -66577
+0;
+#X text 305 300 set in and outpoint;
+#X obj 56 349 cnv 15 20 20 empty empty 4 6 10 0 14 -261234 -66577 0
 ;
-#X text 73 334 play;
-#X text 38 750 Max Neupert - Bauhaus-Universität Weimar 2009-2012
+#X text 113 351 play;
+#X text 78 767 Max Neupert - Bauhaus-Universität Weimar 2009-2012
 ;
 #X connect 2 0 7 0;
 #X connect 2 0 28 0;

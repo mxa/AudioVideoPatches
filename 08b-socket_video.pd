@@ -1,4 +1,4 @@
-#N canvas 496 22 494 701 10;
+#N canvas 493 56 494 701 10;
 #X declare -lib Gem;
 #X declare -lib Gem;
 #X obj 13 5 cnv 15 480 60 empty empty Socket_communication_VIDEO 20
@@ -24,9 +24,9 @@
 #X msg 248 518 3;
 #X obj 193 331 makefilename %s.mov;
 #X obj 147 230 netreceive 3001;
-#X floatatom 234 252 5 0 0 0 - - -;
+#X floatatom 234 252 5 0 0 0 - - -, f 5;
 #X obj 147 272 route frame file;
-#X floatatom 155 309 5 0 0 0 - - -;
+#X floatatom 155 309 5 0 0 0 - - -, f 5;
 #X obj 193 308 symbol;
 #X obj 25 197 gemwin 50;
 #X obj 27 567 pix_buffer_read \$0-speicher;
@@ -35,7 +35,7 @@
 #X text 296 498 this adjusts the rectangle;
 #X text 308 511 dimensions to fit to the;
 #X text 302 524 aspect ratio of the video;
-#X obj 389 70 declare -lib Gem;
+#X obj 358 96 declare -lib Gem;
 #X text 22 69 Open this patch along with 08a-socket-audio.pd in another
 ;
 #X text 22 83 instance of Pd.;

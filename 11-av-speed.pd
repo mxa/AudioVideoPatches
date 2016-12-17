@@ -1,23 +1,22 @@
-#N canvas 657 32 561 679 10;
+#N canvas 651 59 561 679 10;
 #X declare -lib Gem;
 #X declare -lib iemlib;
-#X declare -lib iemlib;
 #X declare -lib Gem;
-#X obj 14 12 cnv 15 480 60 empty empty A/V_Combination_using_a_video_buffer
+#X obj 44 13 cnv 15 480 60 empty empty A/V_Combination_using_a_video_buffer
 20 30 0 20 -262130 -99865 0;
-#X obj 40 587 dac~;
-#X obj 40 528 vline~;
-#X msg 279 119 create \, 1;
-#X msg 291 141 0 \, destroy;
-#X obj 43 241 hsl 195 15 0 1 0 0 \$0-scratch empty empty -2 -8 0 10
+#X obj 70 588 dac~;
+#X obj 70 529 vline~;
+#X msg 309 120 create \, 1;
+#X msg 321 142 0 \, destroy;
+#X obj 73 242 hsl 195 15 0 1 0 0 \$0-scratch empty empty -2 -8 0 10
 -262144 -1 -1 0 1;
-#X obj 40 557 tabread4~ \$0-soundfile;
-#X obj 383 335 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+#X obj 70 558 tabread4~ \$0-soundfile;
+#X obj 413 336 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
-#N canvas 0 22 450 300 (subpatch) 0;
-#X array \$0-soundfile 214603 float 2;
-#X coords 0 1 214603 -1 200 140 1;
-#X restore 40 91 graph;
+#N canvas 0 50 450 300 (subpatch) 0;
+#X array \$0-soundfile 214599 float 2;
+#X coords 0 1 214599 -1 200 140 1;
+#X restore 70 92 graph;
 #N canvas 525 115 431 529 loading_files 0;
 #X obj 150 67 inlet;
 #X obj 177 476 outlet;
@@ -60,12 +59,12 @@
 #X connect 16 1 18 0;
 #X connect 17 0 9 0;
 #X connect 18 0 5 0;
-#X restore 383 356 pd loading_files;
-#X obj 43 256 hsl 195 15 0 1 0 0 \$0-in \$0-in-init empty -2 -8 0 10
+#X restore 413 357 pd loading_files;
+#X obj 73 257 hsl 195 15 0 1 0 0 \$0-in \$0-in-init empty -2 -8 0 10
 -262144 -1 -1 0 1;
-#X obj 43 271 hsl 195 15 0 1 0 0 \$0-out \$0-out-init empty -2 -8 0
+#X obj 73 272 hsl 195 15 0 1 0 0 \$0-out \$0-out-init empty -2 -8 0
 10 -262144 -1 -1 19400 1;
-#X obj 43 231 hsl 195 10 0 1 0 0 empty \$0-playhead empty -2 -8 0 10
+#X obj 73 232 hsl 195 10 0 1 0 0 empty \$0-playhead empty -2 -8 0 10
 -228856 -1 -1 0 1;
 #N canvas 374 553 146 180 scratch 0;
 #X obj 23 134 outlet;
@@ -75,7 +74,7 @@
 #X obj 23 106 pack f f;
 #X obj 68 60 r \$0-speed;
 #X obj 68 84 * 900;
-#X floatatom 88 137 5 0 0 0 - - -;
+#X floatatom 88 137 5 0 0 0 - - -, f 5;
 #X connect 1 0 4 0;
 #X connect 2 0 1 1;
 #X connect 3 0 1 0;
@@ -83,11 +82,11 @@
 #X connect 5 0 6 0;
 #X connect 5 0 7 0;
 #X connect 6 0 4 1;
-#X restore -27 496 pd scratch;
-#X text 19 256 in;
-#X text 16 271 out;
-#X text -8 242 scratch;
-#X text -16 227 playhead;
+#X restore -7 496 pd scratch;
+#X text 49 257 in;
+#X text 46 272 out;
+#X text 22 243 scratch;
+#X text 14 228 playhead;
 #N canvas 36 128 580 428 video_processing 0;
 #X obj 175 33 inlet~;
 #X obj 270 32 inlet;
@@ -143,11 +142,11 @@
 #X connect 22 0 5 1;
 #X connect 25 0 24 0;
 #X connect 26 0 9 0;
-#X restore 272 557 pd video_processing;
-#X obj 43 286 hsl 195 15 1 0.0001 0 0 \$0-speed \$0-speed-init empty
+#X restore 302 558 pd video_processing;
+#X obj 73 287 hsl 195 15 1 0.0001 0 0 \$0-speed \$0-speed-init empty
 -2 -8 0 10 -262144 -1 -1 14551 1;
-#X text 1 286 speed;
-#N canvas 0 22 450 300 init 0;
+#X text 31 287 speed;
+#N canvas 163 563 475 300 init 0;
 #X obj 14 42 loadbang;
 #X msg 44 73 \; pd dsp 1;
 #X obj 37 141 s \$0-in-init;
@@ -161,8 +160,8 @@
 #X text 116 123 sets the in-point to the beginning of the sample;
 #X text 115 175 sets the outpoint to the end of the sample;
 #X text 114 229 sets speed to normal speed;
-#X obj 298 10 declare -lib iemlib;
-#X obj 299 30 declare -lib Gem;
+#X obj 296 54 declare -lib Gem;
+#X obj 298 31 iemlib/iemlib2;
 #X connect 0 0 1 0;
 #X connect 0 0 3 0;
 #X connect 0 0 4 0;
@@ -170,8 +169,8 @@
 #X connect 3 0 2 0;
 #X connect 4 0 5 0;
 #X connect 6 0 7 0;
-#X restore 415 84 pd init;
-#N canvas 0 22 450 300 inpoint 0;
+#X restore 445 85 pd init;
+#N canvas 0 50 450 300 inpoint 0;
 #X obj 24 -59 inlet;
 #X obj 24 59 outlet;
 #X obj 24 -33 t l b;
@@ -186,8 +185,8 @@
 #X connect 4 0 5 1;
 #X connect 5 0 1 0;
 #X connect 6 0 4 1;
-#X restore 40 496 pd inpoint;
-#N canvas 0 22 450 300 outpoint 0;
+#X restore 70 497 pd inpoint;
+#N canvas 0 50 450 300 outpoint 0;
 #X obj 38 -25 inlet;
 #X obj 38 174 outlet;
 #X obj 38 149 pack f f;
@@ -208,8 +207,8 @@
 #X connect 8 0 6 0;
 #X connect 8 1 7 0;
 #X connect 9 0 7 1;
-#X restore 40 474 pd outpoint;
-#N canvas 0 22 450 300 speed 0;
+#X restore 70 475 pd outpoint;
+#N canvas 0 50 450 300 speed 0;
 #X obj 21 194 outlet;
 #X obj 21 -85 r \$0-out;
 #X obj 47 -64 r \$0-in;
@@ -225,7 +224,7 @@
 #X obj 52 123 t b f;
 #X text 54 56 Samplingrate of the audio file;
 #X obj 52 102 * 4;
-#X floatatom 88 153 5 0 0 0 - - -;
+#X floatatom 88 153 5 0 0 0 - - -, f 5;
 #X connect 1 0 8 0;
 #X connect 2 0 4 0;
 #X connect 3 0 4 1;
@@ -243,33 +242,33 @@
 #X connect 12 1 10 1;
 #X connect 12 1 15 0;
 #X connect 14 0 12 0;
-#X restore 76 406 pd speed;
-#X obj 76 428 t f f;
-#X obj 49 363 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+#X restore 106 407 pd speed;
+#X obj 106 429 t f f;
+#X obj 79 364 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
-#X obj 49 451 metro;
-#X text 66 360 play looping;
-#X text 66 338 play once;
-#X obj 40 340 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+#X obj 79 452 metro;
+#X text 96 361 play looping;
+#X text 96 339 play once;
+#X obj 70 341 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
 -1;
-#X text 185 297 |;
-#X text 152 307 normal speed;
-#X msg 300 182 frame \$1;
-#X floatatom 300 164 5 0 0 0 - - -;
-#X obj 279 203 gemwin 30;
-#X obj 255 118 cnv 15 20 20 empty empty 1 6 10 0 14 -261234 -66577
+#X text 215 298 |;
+#X text 182 308 normal speed;
+#X msg 330 183 frame \$1;
+#X floatatom 330 165 5 0 0 0 - - -, f 5;
+#X obj 309 204 gemwin 30;
+#X obj 285 119 cnv 15 20 20 empty empty 1 6 10 0 14 -261234 -66577
 0;
-#X text 343 119 create Gem window;
-#X text 406 332 load files;
-#X obj 360 331 cnv 15 20 20 empty empty 2 6 10 0 14 -261234 -66577
+#X text 373 120 create Gem window;
+#X text 436 333 load files;
+#X obj 390 332 cnv 15 20 20 empty empty 2 6 10 0 14 -261234 -66577
 0;
-#X text 268 267 choose in \, out and speed;
-#X obj 246 265 cnv 15 20 20 empty empty 3 6 10 0 14 -261234 -66577
+#X text 298 268 choose in \, out and speed;
+#X obj 276 266 cnv 15 20 20 empty empty 3 6 10 0 14 -261234 -66577
 0;
-#X text 151 345 play or loop;
-#X obj 11 348 cnv 15 20 20 empty empty 4 6 10 0 14 -261234 -66577 0
+#X text 181 346 play or loop;
+#X obj 41 349 cnv 15 20 20 empty empty 4 6 10 0 14 -261234 -66577 0
 ;
-#X text 39 635 Max Neupert \, GMU - Bauhaus-Universität Weimar 2009
+#X text 69 636 Max Neupert \, GMU - Bauhaus-Universität Weimar 2009
 ;
 #X connect 2 0 6 0;
 #X connect 2 0 18 0;

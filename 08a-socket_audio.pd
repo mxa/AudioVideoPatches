@@ -1,20 +1,19 @@
-#N canvas 1044 57 515 889 10;
-#X declare -lib iemlib;
-#X obj -241 677 dac~;
-#X obj -242 450 vline~;
-#N canvas 0 22 450 300 sample 0;
-#N canvas 0 22 450 300 (subpatch) 0;
+#N canvas 1041 60 628 889 10;
+#X obj 25 688 dac~;
+#X obj 24 461 vline~;
+#N canvas 0 50 450 300 sample 0;
+#N canvas 0 50 450 300 (subpatch) 0;
 #X array \$0-soundfile 214603 float 2;
 #X coords 0 1 214603 -1 200 140 1;
 #X restore 17 27 graph;
-#X restore -241 328 pd sample;
-#X obj -242 401 *;
-#X msg -242 423 \$1 50;
-#X obj -239 360 hsl 128 15 0 1 0 0 empty empty empty -2 -8 0 10 -262144
+#X restore 25 339 pd sample;
+#X obj 24 412 *;
+#X msg 24 434 \$1 50;
+#X obj 27 371 hsl 128 15 0 1 0 0 empty empty empty -2 -8 0 10 -262144
 -1 -1 0 1;
-#X text -180 330 Storage for the sample;
-#X msg -169 424 1 \, 214603 4470.9 \;;
-#N canvas 762 22 450 300 laden 0;
+#X text 86 341 Storage for the sample;
+#X msg 97 435 1 \, 214603 4470.9 \;;
+#N canvas 762 50 450 300 laden 0;
 #X obj 24 164 outlet;
 #X obj 24 67 pack f f;
 #X obj 24 90 trigger list bang bang;
@@ -32,34 +31,33 @@
 #X connect 5 0 0 0;
 #X connect 6 0 1 0;
 #X connect 7 0 1 1;
-#X restore -169 399 pd laden;
-#X obj -134 187 openpanel;
-#X obj -134 169 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+#X restore 97 410 pd laden;
+#X obj 132 198 openpanel;
+#X obj 132 180 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
-#X obj -134 236 t s s;
-#X obj -242 269 makefilename %s.aiff;
-#X obj -28 651 netsend;
-#X msg -16 595 connect localhost 3001;
-#X msg -28 268 send file \$1;
-#X obj -214 498 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1
-1 1;
-#X obj -214 518 metro 20;
-#X obj -214 540 snapshot~;
-#X obj -214 580 /;
-#X msg -9 622 disconnect;
-#X obj -214 601 change;
-#X msg -214 621 send frame \$1;
-#X obj -134 209 iemlib/splitfilename .;
-#X obj -241 649 tabread4~ \$0-soundfile;
-#X obj -199 560 r \$0-samples;
-#X obj -227 379 r \$0-samples;
-#X obj -214 476 loadbang;
-#X obj -28 673 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+#X obj 132 247 t s s;
+#X obj 24 280 makefilename %s.aiff;
+#X obj 238 662 netsend;
+#X msg 250 606 connect localhost 3001;
+#X msg 238 279 send file \$1;
+#X obj 52 509 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
 1;
-#X obj -256 3 cnv 15 480 60 empty empty Socket_communication_AUDIO
-20 30 0 20 -262130 -99865 0;
-#X text 9 211 part of iemlib;
-#N canvas 0 22 450 300 loading_sample 0;
+#X obj 52 529 metro 20;
+#X obj 52 551 snapshot~;
+#X obj 52 591 /;
+#X msg 257 633 disconnect;
+#X obj 52 612 change;
+#X msg 52 632 send frame \$1;
+#X obj 25 660 tabread4~ \$0-soundfile;
+#X obj 67 571 r \$0-samples;
+#X obj 39 390 r \$0-samples;
+#X obj 52 487 loadbang;
+#X obj 238 684 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 10 14 cnv 15 480 60 empty empty Socket_communication_AUDIO 20
+30 0 20 -262130 -99865 0;
+#X text 275 222 part of iemlib;
+#N canvas 0 50 450 300 loading_sample 0;
 #X obj -210 14 inlet;
 #X obj -210 133 soundfiler;
 #X obj -210 197 / 48;
@@ -80,54 +78,54 @@
 #X connect 7 0 8 1;
 #X connect 8 0 9 0;
 #X connect 9 0 1 0;
-#X restore -242 292 pd loading_sample;
-#X text -9 673 indicates connection;
-#X text -114 168 load audio and video files;
-#X obj 118 789 maxlib/netserver;
-#X obj 118 811 maxlib/netclient;
-#X text -245 133 (In the other instance open 08b-socket-video.pd);
-#X obj 119 702 mrpeach/tcpsend;
-#X obj 119 723 mrpeach/tcpreceive;
-#X obj 128 594 cnv 15 20 20 empty empty 1 6 10 0 14 -261234 -66577
+#X restore 24 303 pd loading_sample;
+#X text 257 684 indicates connection;
+#X text 152 179 load audio and video files;
+#X obj 459 801 maxlib/netserver;
+#X obj 459 823 maxlib/netclient;
+#X text 21 144 (In the other instance open 08b-socket-video.pd);
+#X obj 460 714 mrpeach/tcpsend;
+#X obj 460 735 mrpeach/tcpreceive;
+#X obj 394 605 cnv 15 20 20 empty empty 1 6 10 0 14 -261234 -66577
 0;
-#X obj -265 357 cnv 15 20 20 empty empty 4 6 10 0 14 -261234 -66577
-0;
-#X obj -192 423 cnv 15 20 20 empty empty 4 6 10 0 14 -261234 -66577
-0;
-#X obj -159 166 cnv 15 20 20 empty empty 3 6 10 0 14 -261234 -66577
-0;
-#N canvas 339 157 151 112 init 0;
-#X obj -56 12 loadbang;
-#X msg -57 35 \; pd dsp 1;
-#X obj -56 -11 declare -lib iemlib;
-#X connect 0 0 1 0;
-#X restore 179 66 pd init;
-#X text -245 75 For better performance and less audio-dropouts use
-this technique. Two instances of Pd handle audio and video separately.
+#X obj 1 368 cnv 15 20 20 empty empty 4 6 10 0 14 -261234 -66577 0
 ;
-#X text -245 119 Open a second Pd and connect via network socket.;
-#X obj 118 745 iemnet/tcpsend;
-#X obj 118 766 iemnet/tcpreceive;
-#X text -244 702 Note: You may actually prefer objects from the mrpeach
+#X obj 74 434 cnv 15 20 20 empty empty 4 6 10 0 14 -261234 -66577 0
+;
+#X obj 107 177 cnv 15 20 20 empty empty 3 6 10 0 14 -261234 -66577
+0;
+#N canvas 336 187 264 198 init 1;
+#X obj 27 46 loadbang;
+#X msg 26 69 \; pd dsp 1;
+#X obj 27 23 iemlib/iemlib2;
+#X connect 0 0 1 0;
+#X restore 445 77 pd init;
+#X text 21 86 For better performance and less audio-dropouts use this
+technique. Two instances of Pd handle audio and video separately.;
+#X text 21 130 Open a second Pd and connect via network socket.;
+#X obj 459 757 iemnet/tcpsend;
+#X obj 459 778 iemnet/tcpreceive;
+#X text 22 713 Note: You may actually prefer objects from the mrpeach
 or iemnet libraries or netserver / netclient from the maxlib library
 over netsend / netreceive because of better performance and stability.
 I used netsend/netreceive in this example because they are Pd-vanilla
 objects.;
-#X text -245 787 Max Neupert - Bauhaus-Universität Weimar 2009-2012
+#X text 21 798 Max Neupert - Bauhaus-Universität Weimar 2009-2012
 ;
+#X obj 132 220 splitfilename .;
 #X connect 1 0 18 0;
-#X connect 1 0 24 0;
+#X connect 1 0 23 0;
 #X connect 3 0 4 0;
 #X connect 4 0 1 0;
 #X connect 5 0 3 0;
 #X connect 7 0 1 0;
 #X connect 8 0 7 0;
-#X connect 9 0 23 0;
+#X connect 9 0 49 0;
 #X connect 10 0 9 0;
 #X connect 11 0 12 0;
 #X connect 11 1 15 0;
-#X connect 12 0 31 0;
-#X connect 13 0 28 0;
+#X connect 12 0 30 0;
+#X connect 13 0 27 0;
 #X connect 14 0 13 0;
 #X connect 15 0 13 0;
 #X connect 16 0 17 0;
@@ -137,9 +135,9 @@ objects.;
 #X connect 20 0 13 0;
 #X connect 21 0 22 0;
 #X connect 22 0 13 0;
-#X connect 23 0 11 0;
-#X connect 24 0 0 0;
-#X connect 24 0 0 1;
-#X connect 25 0 19 1;
-#X connect 26 0 3 1;
-#X connect 27 0 16 0;
+#X connect 23 0 0 0;
+#X connect 23 0 0 1;
+#X connect 24 0 19 1;
+#X connect 25 0 3 1;
+#X connect 26 0 16 0;
+#X connect 49 0 11 0;

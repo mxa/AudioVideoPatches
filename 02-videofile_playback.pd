@@ -1,5 +1,4 @@
-#N canvas 306 51 624 734 10;
-#X declare -lib GEM;
+#N canvas 303 56 624 734 10;
 #X declare -lib Gem;
 #X obj 416 30 import GEM;
 #X obj 22 14 cnv 15 480 60 empty empty let's_play_video 20 30 0 20
@@ -19,9 +18,9 @@
 #X text 93 341 open a video clip here;
 #X text 151 479 this maps the pixels of the video on;
 #X text 153 536 a geometrical object;
-#X floatatom 140 416 5 0 0 0 - - -;
+#X floatatom 140 416 5 0 0 0 - - -, f 5;
 #X text 175 412 frame #;
-#X obj 373 150 declare -lib Gem;
+#X obj 433 149 declare -lib Gem;
 #X text 31 115 You load extensions either by adding it generally to
 the startup flags like this: -lib Gem;
 #X text 34 149 Or by declaring it to this patch (but only to this one)

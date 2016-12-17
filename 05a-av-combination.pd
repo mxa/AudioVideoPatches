@@ -1,4 +1,4 @@
-#N canvas 0 22 542 796 10;
+#N canvas 175 106 542 796 10;
 #X declare -lib Gem;
 #X obj 4 6 cnv 15 480 60 empty empty A/V_Combination 20 30 0 20 -262130
 -99865 0;
@@ -8,12 +8,12 @@
 #X obj 28 165 openpanel;
 #X obj 28 146 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
 -1;
-#X floatatom 55 339 20 0 0 0 - - -;
-#X floatatom 28 404 20 0 0 0 - - -;
+#X floatatom 55 339 20 0 0 0 - - -, f 20;
+#X floatatom 28 404 20 0 0 0 - - -, f 20;
 #X obj 28 359 / 48;
 #X obj 27 298 t f f;
 #N canvas 0 396 450 300 sample 0;
-#N canvas 0 22 450 300 (subpatch) 0;
+#N canvas 0 50 450 300 (subpatch) 0;
 #X array \$0-soundfile 214603 float 2;
 #X coords 0 1 214603 -1 200 140 1;
 #X restore 17 27 graph;
@@ -58,17 +58,17 @@
 ;
 #X obj 3 443 cnv 15 20 20 empty empty 4 6 10 0 14 -261234 -66577 0
 ;
-#N canvas 0 22 145 114 init 0;
-#X obj -56 -11 declare -lib Gem;
-#X obj -56 12 loadbang;
-#X msg -57 35 \; pd dsp 1;
+#N canvas 0 83 145 114 init 0;
+#X obj 20 14 declare -lib Gem;
+#X obj 20 37 loadbang;
+#X msg 20 60 \; pd dsp 1;
 #X connect 1 0 2 0;
 #X restore 438 71 pd init;
-#X floatatom 77 595 10 0 0 0 - - -;
+#X floatatom 77 595 10 0 0 0 - - -, f 10;
 #X obj 340 575 change;
 #X obj 295 689 square 4;
 #X obj 69 318 send \$0-samples;
-#X floatatom 416 644 5 0 0 0 - - -;
+#X floatatom 416 644 5 0 0 0 - - -, f 5;
 #X obj 340 553 int;
 #X obj 340 533 + 0.5;
 #X text 22 716 Max Neupert - Bauhaus-Universität Weimar 2009-2012

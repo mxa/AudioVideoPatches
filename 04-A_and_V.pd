@@ -1,4 +1,4 @@
-#N canvas 522 62 507 740 10;
+#N canvas 519 65 507 740 10;
 #X declare -lib Gem;
 #X obj 4 6 cnv 15 480 60 empty empty A/V_Combination 20 30 0 20 -262130
 -99865 0;
@@ -7,9 +7,9 @@
 #X obj 28 165 openpanel;
 #X obj 28 146 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
 -1;
-#X floatatom 28 344 20 0 0 0 - - -;
+#X floatatom 28 344 20 0 0 0 - - -, f 20;
 #N canvas 0 396 450 300 sample 0;
-#N canvas 0 22 450 300 (subpatch) 0;
+#N canvas 0 50 450 300 (subpatch) 0;
 #X array \$0-soundfile 214599 float 2;
 #X coords 0 1 214599 -1 200 140 1;
 #X restore 17 27 graph;
@@ -39,10 +39,10 @@
 0;
 #X obj 5 142 cnv 15 20 20 empty empty 2 6 10 0 14 -261234 -66577 0
 ;
-#N canvas 0 22 145 114 init 0;
-#X obj -56 -11 declare -lib Gem;
-#X obj -56 12 loadbang;
-#X msg -57 35 \; pd dsp 1;
+#N canvas 0 113 215 152 init 1;
+#X obj 17 19 declare -lib Gem;
+#X obj 17 42 loadbang;
+#X msg 17 65 \; pd dsp 1;
 #X connect 1 0 2 0;
 #X restore 438 71 pd init;
 #X obj 295 666 square 4;
@@ -54,12 +54,12 @@
 #X obj 330 408 loadbang;
 #X obj 317 514 unpack f f f;
 #X obj 317 592 s \$0-frames;
-#X floatatom 327 571 5 0 0 0 - - -;
+#X floatatom 327 571 5 0 0 0 - - -, f 5;
 #X obj 28 299 / 48000;
 #X obj 37 323 s \$0-seconds;
 #X obj 406 514 r \$0-seconds;
 #X obj 391 551 /;
-#X floatatom 399 572 5 0 0 0 - - -;
+#X floatatom 399 572 5 0 0 0 - - -, f 5;
 #X obj 391 592 s \$0-framerate;
 #X obj 317 156 r \$0-framerate;
 #X msg 317 176 frame \$1;

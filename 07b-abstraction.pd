@@ -1,5 +1,4 @@
-#N canvas 780 121 521 564 10;
-#X declare -lib iemlib;
+#N canvas 777 124 521 564 10;
 #X declare -lib Gem;
 #X declare -lib Gem;
 #X declare -lib iemlib;
@@ -19,14 +18,14 @@
 ;
 #X obj 24 253 cnv 15 20 20 empty empty 3 6 10 0 14 -261234 -66577 0
 ;
-#N canvas 0 22 177 189 init 0;
-#X obj -67 -41 declare -lib iemlib;
-#X obj -66 -21 declare -lib Gem;
-#X obj -63 3 loadbang;
-#X msg -66 24 \; pd dsp 1;
-#X connect 2 0 3 0;
-#X restore 445 81 pd init;
-#X floatatom 154 445 9 0 0 0 - - -;
+#N canvas 0 83 177 189 init 0;
+#X obj 11 49 declare -lib Gem;
+#X obj 11 73 loadbang;
+#X msg 11 94 \; pd dsp 1;
+#X obj 10 29 iemlib/iemlib2;
+#X connect 1 0 2 0;
+#X restore 433 120 pd init;
+#X floatatom 154 445 9 0 0 0 - - -, f 9;
 #X obj 51 474 dac~;
 #X msg 51 253 bang;
 #X obj 138 472 s \$0-samples;

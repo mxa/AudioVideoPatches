@@ -1,49 +1,48 @@
-#N canvas 694 63 570 648 10;
-#X declare -lib GEM;
+#N canvas 691 66 646 644 10;
 #X declare -lib zexy;
 #X declare -lib motex;
-#X obj 412 -41 import GEM;
-#X obj 18 -51 cnv 15 480 60 empty empty VLC+AppleScript 20 30 0 20
--262130 -99865 0;
-#X obj 44 422 zexy/list2symbol;
-#X obj 44 400 list;
-#X obj 27 472 motex/system;
-#N canvas 0 22 231 126 init 0;
+#X obj 415 50 import GEM;
+#X obj 21 40 cnv 15 480 60 empty empty VLC+AppleScript 20 30 0 20 -262130
+-99865 0;
+#X obj 47 513 zexy/list2symbol;
+#X obj 47 491 list;
+#X obj 30 563 motex/system;
+#N canvas 0 50 231 126 init 0;
 #X obj 44 27 declare -lib zexy;
 #X obj 43 49 declare -lib motex;
-#X restore 451 20 pd init;
-#X obj 44 160 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+#X restore 454 111 pd init;
+#X obj 47 251 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
 -1;
-#X obj 44 180 openpanel;
-#X obj 44 201 zexy/symbol2list /;
-#X obj 44 221 zexy/list2symbol :;
-#X msg 44 242 open file "\$1";
-#X text 283 193 Play;
-#X text 291 272 Play fullscreen;
-#X text 27 22 Sometimes you may simply want to trigger a playback of
-a video with Pure Data.;
-#X msg 27 108 osascript -e 'tell application "Finder" to open application
+#X obj 47 271 openpanel;
+#X obj 47 292 zexy/symbol2list /;
+#X obj 47 312 zexy/list2symbol :;
+#X msg 47 333 open file "\$1";
+#X text 286 284 Play;
+#X text 294 363 Play fullscreen;
+#X text 30 113 Sometimes you may simply want to trigger a playback
+of a video with Pure Data.;
+#X msg 30 199 osascript -e 'tell application "Finder" to open application
 file "VLC.app" of folder "Applications" of startup disk' &;
-#X text 65 159 Open movie;
-#X text 29 59 In OS X you may control VLC from within Pure Data through
+#X text 68 250 Open movie;
+#X text 32 150 In OS X you may control VLC from within Pure Data through
 AppleScript.;
-#X msg 44 446 osascript -e 'tell application "VLC" to \$1' &;
-#X text 391 115 open VLC application;
-#X msg 212 194 play;
-#X msg 212 217 stop;
-#X msg 212 271 fullscreen;
-#X msg 223 355 mute;
-#X text 298 351 Mute/unmute switch;
-#X text 291 296 Volume control;
-#X msg 159 355 volume\$1;
-#X obj 159 335 symbol;
-#X msg 244 295 Down;
-#X msg 213 295 Up;
-#X text 284 216 Stop;
-#X msg 213 242 previous;
-#X msg 277 243 next;
-#X text 316 242 playlist;
-#X text 25 501 Max Neupert - Bauhaus-Universität Weimar 2011;
+#X msg 47 537 osascript -e 'tell application "VLC" to \$1' &;
+#X text 451 205 open VLC application;
+#X msg 215 285 play;
+#X msg 215 308 stop;
+#X msg 215 362 fullscreen;
+#X msg 226 446 mute;
+#X text 301 442 Mute/unmute switch;
+#X text 294 387 Volume control;
+#X msg 162 446 volume\$1;
+#X obj 162 426 symbol;
+#X msg 247 386 Down;
+#X msg 216 386 Up;
+#X text 287 307 Stop;
+#X msg 216 333 previous;
+#X msg 280 334 next;
+#X text 319 333 playlist;
+#X text 28 592 Max Neupert - Bauhaus-Universität Weimar 2011;
 #X connect 2 0 17 0;
 #X connect 3 0 2 0;
 #X connect 6 0 7 0;

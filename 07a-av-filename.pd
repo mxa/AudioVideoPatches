@@ -1,6 +1,5 @@
-#N canvas 558 33 798 781 10;
+#N canvas 549 62 798 781 10;
 #X declare -lib Gem;
-#X declare -lib iemlib;
 #X declare -lib Gem;
 #X obj 16 0 cnv 15 480 60 empty empty Adding_convenience 20 30 0 20
 -262130 -99865 0;
@@ -9,8 +8,8 @@
 #X obj 39 597 soundfiler;
 #X obj 39 660 / 48;
 #X obj 39 618 t f f;
-#N canvas 0 22 450 300 sample 0;
-#N canvas 0 22 450 300 (subpatch) 0;
+#N canvas 0 50 450 300 sample 0;
+#N canvas 0 50 450 300 (subpatch) 0;
 #X array \$0-soundfile 214603 float 2;
 #X coords 0 1 214603 -1 200 140 1;
 #X restore 17 27 graph;
@@ -36,16 +35,16 @@
 #X text 38 191 Audio;
 #X text 270 193 Video;
 #X text 99 213 Storage for the sample;
-#X text 439 206 Storage for the video;
+#X text 464 204 Storage for the video;
 #X text 269 251 Gem window;
-#X obj 511 487 cnv 15 45 110 empty empty empty 20 12 0 14 -261234 -66577
+#X obj 521 487 cnv 15 45 110 empty empty empty 20 12 0 14 -261234 -66577
 0;
-#X obj 514 493 /;
-#X obj 514 570 *;
-#X obj 514 514 t b f;
-#X msg 514 536 3;
+#X obj 524 493 /;
+#X obj 524 570 *;
+#X obj 524 514 t b f;
+#X msg 524 536 3;
 #X msg 112 365 1 \, 214603 4470.9 \;;
-#N canvas 762 22 450 300 laden 0;
+#N canvas 762 50 450 300 laden 0;
 #X obj 20 166 outlet;
 #X obj 20 69 pack f f;
 #X obj 20 92 trigger list bang bang;
@@ -77,19 +76,18 @@
 #X obj 66 532 symbol \$0-soundfile;
 #X obj 39 555 pack s s;
 #X msg 39 576 read -resize \$1 \$2;
-#X text 440 219 maximum 800 frames in this case;
+#X text 465 217 maximum 800 frames in this case;
 #X obj 438 493 s \$0-frames;
 #X obj 40 105 openpanel;
 #X obj 40 87 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
 -1;
 #X text 437 345 loading the video into the buffer;
-#X obj 40 128 splitfilename .;
 #X obj 39 491 makefilename %s.aiff;
 #X obj 438 391 makefilename %s.mov;
-#X text 146 129 this is part of the iemlib external;
-#X text 556 513 this adjusts the rectangle;
-#X text 568 526 dimensions to fit to the;
-#X text 562 539 aspect ratio of the video;
+#X text 158 131 this is part of the iemlib external;
+#X text 566 513 this adjusts the rectangle;
+#X text 578 526 dimensions to fit to the;
+#X text 572 539 aspect ratio of the video;
 #X obj 438 369 r \$0-filename;
 #X obj 39 470 r \$0-filename;
 #X obj 248 271 cnv 15 20 20 empty empty 1 6 10 0 14 -261234 -66577
@@ -101,16 +99,17 @@
 #X obj 90 364 cnv 15 20 20 empty empty 3 6 10 0 14 -261234 -66577 0
 ;
 #X obj 40 149 s \$0-filename;
-#N canvas 0 22 177 189 init 0;
-#X obj -67 -41 declare -lib iemlib;
-#X obj -66 -21 declare -lib Gem;
-#X obj -63 3 loadbang;
-#X msg -66 24 \; pd dsp 1;
-#X connect 2 0 3 0;
+#N canvas 0 62 399 216 init 0;
+#X obj 10 38 declare -lib Gem;
+#X obj 10 62 loadbang;
+#X msg 10 83 \; pd dsp 1;
+#X obj 134 38 iemlib/iemlib2;
+#X connect 1 0 2 0;
 #X restore 508 15 pd init;
 #X obj 298 531 + 0.5;
 #X text 39 709 Max Neupert \, GMU - Bauhaus-Universität Weimar 2009
 ;
+#X obj 40 128 splitfilename .;
 #X connect 2 0 18 0;
 #X connect 2 0 39 0;
 #X connect 3 0 5 0;
@@ -128,7 +127,7 @@
 #X connect 14 0 15 0;
 #X connect 15 0 2 0;
 #X connect 16 0 14 0;
-#X connect 17 0 69 0;
+#X connect 17 0 68 0;
 #X connect 18 0 20 0;
 #X connect 19 0 42 0;
 #X connect 19 1 18 0;
@@ -155,11 +154,11 @@
 #X connect 46 0 47 1;
 #X connect 47 0 48 0;
 #X connect 48 0 3 0;
-#X connect 51 0 54 0;
+#X connect 51 0 70 0;
 #X connect 52 0 51 0;
-#X connect 54 0 67 0;
-#X connect 55 0 45 0;
-#X connect 56 0 12 0;
-#X connect 61 0 56 0;
-#X connect 62 0 55 0;
-#X connect 69 0 21 0;
+#X connect 54 0 45 0;
+#X connect 55 0 12 0;
+#X connect 60 0 55 0;
+#X connect 61 0 54 0;
+#X connect 68 0 21 0;
+#X connect 70 0 66 0;

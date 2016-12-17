@@ -1,40 +1,40 @@
-#N canvas 634 30 688 701 10;
+#N canvas 631 56 688 701 10;
 #X declare -lib py;
 #X declare -lib pyext;
-#X obj 28 -28 cnv 15 480 60 empty empty Videolan+Python 20 30 0 20
--262130 -99865 0;
-#X text 37 45 Sometimes you may simply want to trigger a playback of
+#X obj 24 16 cnv 15 480 60 empty empty Videolan+Python 20 30 0 20 -262130
+-99865 0;
+#X text 33 89 Sometimes you may simply want to trigger a playback of
 a video with Pure Data.;
-#X text 48 521 Thanks to Thomas Grill;
-#X obj 49 416 list prepend set;
-#X obj 49 438 list trim;
-#X msg 49 320 reload.;
-#X msg 313 340 list quit;
-#X msg 306 320 list help;
-#X msg 284 254 list play;
-#X msg 295 278 list playlist;
-#X obj 64 392 print;
-#X msg 301 298 list stop;
+#X text 44 565 Thanks to Thomas Grill;
+#X obj 45 460 list prepend set;
+#X obj 45 482 list trim;
+#X msg 45 364 reload.;
+#X msg 309 384 list quit;
+#X msg 302 364 list help;
+#X msg 280 298 list play;
+#X msg 291 322 list playlist;
+#X obj 60 436 print;
+#X msg 297 342 list stop;
 #N canvas 156 161 210 131 init 0;
 #X obj 24 27 declare -lib py;
 #X obj 24 46 declare -lib pyext;
-#X restore 441 50 pd init;
-#X msg 268 229 list add /Path/to/File.avi;
-#X text 36 81 You can use VideoLanClient Player from within Pure Data
+#X restore 437 94 pd init;
+#X msg 264 273 list add /Path/to/File.avi;
+#X text 32 125 You can use VideoLanClient Player from within Pure Data
 through Python and a network socket.;
-#X text 36 114 Pyext is necessary for this to run.;
-#X text 57 129 http://puredata.info/Members/thomas/py/;
-#X text 37 153 Then in a bash run;
-#X text 53 167 $ cd /Applications/VLC.app/Contents/MacOS;
-#X text 53 180 $ ./VLC -I rc --rc-host=localhost:1234;
-#X text 347 166 (example under OS X);
-#X obj 49 363 pyx. 1 1 vlc localhost 1234 @detach 0;
-#X obj 487 294 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+#X text 32 158 Pyext is necessary for this to run.;
+#X text 53 173 http://puredata.info/Members/thomas/py/;
+#X text 33 197 Then in a bash run;
+#X text 49 211 $ cd /Applications/VLC.app/Contents/MacOS;
+#X text 49 224 $ ./VLC -I rc --rc-host=localhost:1234;
+#X text 343 210 (example under OS X);
+#X obj 45 407 pyx. 1 1 vlc localhost 1234 @detach 0;
+#X obj 483 338 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
-#X obj 487 317 openpanel;
-#X msg 487 339 list add \$1;
-#X msg 49 461;
-#X text 49 506 Max Neupert - Bauhaus-Universität Weimar 2011;
+#X obj 483 361 openpanel;
+#X msg 483 383 list add \$1;
+#X msg 45 505;
+#X text 45 550 Max Neupert - Bauhaus-Universität Weimar 2011;
 #X connect 3 0 4 0;
 #X connect 4 0 25 0;
 #X connect 5 0 21 0;

@@ -1,7 +1,7 @@
-#N canvas 786 110 518 650 10;
+#N canvas 783 113 518 650 10;
 #X declare -lib Gem;
 #X msg 291 174 0 \, destroy;
-#N canvas 0 22 151 133 init 0;
+#N canvas 0 83 151 133 init 0;
 #X obj 23 26 loadbang;
 #X msg 34 53 \; pd dsp 1;
 #X obj 24 4 declare -lib Gem;
@@ -28,7 +28,7 @@
 #X obj 44 436 line;
 #X obj 47 176 hsl 200 15 0 99 0 0 empty empty empty -2 -8 0 10 -262144
 -1 -1 0 1;
-#X obj 373 363 pix_delay 100;
+#X obj 384 363 pix_delay 100;
 #N canvas 992 481 229 183 frames2ms 0;
 #X obj 14 10 inlet;
 #X obj 14 120 outlet;
@@ -43,14 +43,14 @@
 #X connect 4 1 2 1;
 #X connect 5 0 4 0;
 #X restore 44 353 pd frames2ms;
-#X obj 373 339 pix_separator;
+#X obj 384 339 pix_separator;
 #X obj 284 338 pix_separator;
 #X obj 29 514 -~;
 #X obj 284 385 pix_diff;
 #X obj 29 245 adc~ 1;
 #X obj 44 146 s \$0-frames;
 #X msg 300 215 frame \$1;
-#X floatatom 44 127 5 0 0 0 - - -;
+#X floatatom 44 127 5 0 0 0 - - -, f 5;
 #X obj 56 274 delwrite~ \$0-memory 4950;
 #X text 16 81 Let's subtract the present from the past.;
 #X obj 29 544 *~;

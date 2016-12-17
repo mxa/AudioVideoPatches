@@ -1,4 +1,4 @@
-#N canvas 0 22 738 784 10;
+#N canvas 0 56 768 784 10;
 #X declare -lib Gem;
 #X declare -lib Gem;
 #X obj 14 -8 cnv 15 480 60 empty empty A/V_Combination_using_a_video_buffer
@@ -11,8 +11,8 @@
 -1;
 #X obj 38 291 / 48;
 #X obj 38 249 t f f;
-#N canvas 0 22 450 300 sample 0;
-#N canvas 0 22 450 300 (subpatch) 0;
+#N canvas 0 50 450 300 sample 0;
+#N canvas 0 50 450 300 (subpatch) 0;
 #X array \$0-soundfile 214599 float 2;
 #X coords 0 1 214599 -1 200 140 1;
 #X restore 17 27 graph;
@@ -41,7 +41,7 @@
 #X text 37 59 Audio;
 #X text 269 61 Video;
 #X text 98 81 Storage for the sample;
-#X text 436 82 Storage for the video;
+#X text 468 78 Storage for the video;
 #X obj 509 542 cnv 15 45 110 empty empty empty 20 12 0 14 -261234 -66577
 0;
 #X obj 512 548 /;
@@ -61,7 +61,7 @@
 #X obj 65 162 symbol \$0-soundfile;
 #X obj 38 185 pack s s;
 #X msg 38 207 read -resize \$1 \$2;
-#X text 440 95 maximum 800 frames in this case;
+#X text 472 91 maximum 800 frames in this case;
 #X obj 436 548 s \$0-frames;
 #X text 554 568 this adjusts the rectangle;
 #X text 566 581 dimensions to fit to the;
@@ -81,7 +81,7 @@
 #X obj 89 419 cnv 15 20 20 empty empty 4 6 10 0 14 -261234 -66577 0
 ;
 #X msg 112 421 1 \, 214599 4470.81 \;;
-#N canvas 762 22 450 300 laden 0;
+#N canvas 762 50 450 300 laden 0;
 #X obj 20 166 outlet;
 #X obj 20 69 pack f f;
 #X obj 20 92 trigger list bang bang;
@@ -100,10 +100,10 @@
 #X connect 6 0 1 0;
 #X connect 7 0 1 1;
 #X restore 112 396 pd laden;
-#N canvas 0 22 145 114 init 0;
-#X obj -56 -11 declare -lib Gem;
-#X obj -56 12 loadbang;
-#X msg -57 35 \; pd dsp 1;
+#N canvas 0 83 145 114 init 0;
+#X obj 16 15 declare -lib Gem;
+#X obj 16 38 loadbang;
+#X msg 16 61 \; pd dsp 1;
 #X connect 1 0 2 0;
 #X restore 502 11 pd init;
 #X obj 296 566 + 0.5;
