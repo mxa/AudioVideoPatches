@@ -54,11 +54,11 @@ void ofApp::draw(){
     int vidHeight = pixels.getHeight();
     int nChannels = pixels.getNumChannels();
 
-    ofSetHexColor(0x000000);
+    ofSetColor(205,205,205);
     string buf = "listening for OSC messages on port " + ofToString(PORT);
-	ofDrawBitmapStringHighlight(buf, 10, 20);
+	ofDrawBitmapString(buf, 10, 20);
 	string frame = "displaying frame # " + ofToString(framef) + " of " + ofToString(moviePayload.getTotalNumFrames());
-	ofDrawBitmapStringHighlight(frame, 10, 35);
+	ofDrawBitmapString(frame, 10, 35);
 }
 
 //--------------------------------------------------------------
