@@ -1,10 +1,10 @@
-#N canvas 1041 60 628 889 10;
+#N canvas 1041 173 523 759 10;
 #X obj 25 688 dac~;
 #X obj 24 461 vline~;
 #N canvas 0 50 450 300 sample 0;
 #N canvas 0 50 450 300 (subpatch) 0;
-#X array \$0-soundfile 214603 float 2;
-#X coords 0 1 214603 -1 200 140 1;
+#X array \$0-soundfile 214599 float 2;
+#X coords 0 1 214599 -1 200 140 1;
 #X restore 17 27 graph;
 #X restore 25 339 pd sample;
 #X obj 24 412 *;
@@ -12,25 +12,25 @@
 #X obj 27 371 hsl 128 15 0 1 0 0 empty empty empty -2 -8 0 10 -262144
 -1 -1 0 1;
 #X text 86 341 Storage for the sample;
-#X msg 97 435 1 \, 214603 4470.9 \;;
-#N canvas 762 50 450 300 laden 0;
+#X msg 97 435 0 \, 214599 4470.81 \;;
+#N canvas 762 173 450 300 laden 0;
 #X obj 24 164 outlet;
 #X obj 24 67 pack f f;
 #X obj 24 90 trigger list bang bang;
-#X msg 153 127 set 1;
 #X msg 88 127 addcomma;
 #X msg 24 126 add \$2 \$1;
 #X obj 24 17 r \$0-miliseconds;
 #X obj 69 42 r \$0-samples;
+#X msg 153 127 set 0;
 #X connect 1 0 2 0;
-#X connect 2 0 5 0;
-#X connect 2 1 4 0;
-#X connect 2 2 3 0;
+#X connect 2 0 4 0;
+#X connect 2 1 3 0;
+#X connect 2 2 7 0;
 #X connect 3 0 0 0;
 #X connect 4 0 0 0;
-#X connect 5 0 0 0;
-#X connect 6 0 1 0;
-#X connect 7 0 1 1;
+#X connect 5 0 1 0;
+#X connect 6 0 1 1;
+#X connect 7 0 0 0;
 #X restore 97 410 pd laden;
 #X obj 132 198 openpanel;
 #X obj 132 180 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
@@ -38,7 +38,7 @@
 #X obj 132 247 t s s;
 #X obj 24 280 makefilename %s.aiff;
 #X obj 238 662 netsend;
-#X msg 250 606 connect localhost 3001;
+#X msg 249 610 connect localhost 3001;
 #X msg 238 279 send file \$1;
 #X obj 52 509 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
 1;
@@ -56,7 +56,7 @@
 1;
 #X obj 10 14 cnv 15 480 60 empty empty Socket_communication_AUDIO 20
 30 0 20 -262130 -99865 0;
-#X text 275 222 part of iemlib;
+#X text 232 220 part of iemlib;
 #N canvas 0 50 450 300 loading_sample 0;
 #X obj -210 14 inlet;
 #X obj -210 133 soundfiler;
@@ -81,12 +81,8 @@
 #X restore 24 303 pd loading_sample;
 #X text 257 684 indicates connection;
 #X text 152 179 load audio and video files;
-#X obj 459 801 maxlib/netserver;
-#X obj 459 823 maxlib/netclient;
 #X text 21 144 (In the other instance open 08b-socket-video.pd);
-#X obj 460 714 mrpeach/tcpsend;
-#X obj 460 735 mrpeach/tcpreceive;
-#X obj 394 605 cnv 15 20 20 empty empty 1 6 10 0 14 -261234 -66577
+#X obj 414 610 cnv 15 20 20 empty empty 1 6 10 0 14 -261234 -66577
 0;
 #X obj 1 368 cnv 15 20 20 empty empty 4 6 10 0 14 -261234 -66577 0
 ;
@@ -94,7 +90,7 @@
 ;
 #X obj 107 177 cnv 15 20 20 empty empty 3 6 10 0 14 -261234 -66577
 0;
-#N canvas 336 187 264 198 init 1;
+#N canvas 336 214 264 198 init 0;
 #X obj 27 46 loadbang;
 #X msg 26 69 \; pd dsp 1;
 #X obj 27 23 iemlib/iemlib2;
@@ -103,16 +99,9 @@
 #X text 21 86 For better performance and less audio-dropouts use this
 technique. Two instances of Pd handle audio and video separately.;
 #X text 21 130 Open a second Pd and connect via network socket.;
-#X obj 459 757 iemnet/tcpsend;
-#X obj 459 778 iemnet/tcpreceive;
-#X text 22 713 Note: You may actually prefer objects from the mrpeach
-or iemnet libraries or netserver / netclient from the maxlib library
-over netsend / netreceive because of better performance and stability.
-I used netsend/netreceive in this example because they are Pd-vanilla
-objects.;
-#X text 21 798 Max Neupert - Bauhaus-Universität Weimar 2009-2012
-;
 #X obj 132 220 splitfilename .;
+#X text 18 722 Max Neupert - Bauhaus-Universität Weimar 2009-2018
+;
 #X connect 1 0 18 0;
 #X connect 1 0 23 0;
 #X connect 3 0 4 0;
@@ -120,7 +109,7 @@ objects.;
 #X connect 5 0 3 0;
 #X connect 7 0 1 0;
 #X connect 8 0 7 0;
-#X connect 9 0 49 0;
+#X connect 9 0 41 0;
 #X connect 10 0 9 0;
 #X connect 11 0 12 0;
 #X connect 11 1 15 0;
@@ -140,4 +129,4 @@ objects.;
 #X connect 24 0 19 1;
 #X connect 25 0 3 1;
 #X connect 26 0 16 0;
-#X connect 49 0 11 0;
+#X connect 41 0 11 0;

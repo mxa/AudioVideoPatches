@@ -1,21 +1,20 @@
-#N canvas 780 65 580 836 10;
-#X declare -lib Gem;
+#N canvas 586 224 607 844 10;
 #X declare -lib iemlib;
 #X declare -lib Gem;
 #X obj 20 12 cnv 15 480 60 empty empty MIDI_control 20 30 0 20 -262130
 -99865 0;
 #X obj 46 771 dac~;
-#X obj 46 591 vline~;
+#X obj 46 611 vline~;
 #X msg 273 182 create \, 1;
 #X msg 285 204 0 \, destroy;
-#X obj 46 620 tabread4~ \$0-soundfile;
+#X obj 46 640 tabread4~ \$0-soundfile;
 #X obj 325 377 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
 #N canvas 0 50 450 300 (subpatch) 0;
-#X array \$0-soundfile 280265 float 2;
-#X coords 0 1 280265 -1 200 140 1;
+#X array \$0-soundfile 214599 float 2;
+#X coords 0 1 214599 -1 200 140 1;
 #X restore 46 155 graph;
-#N canvas 525 115 431 529 loading_files 0;
+#N canvas 2817 186 851 943 loading_files 0;
 #X obj 150 67 inlet;
 #X obj 177 476 outlet;
 #X obj 19 394 soundfiler;
@@ -57,7 +56,7 @@
 #X connect 16 1 18 0;
 #X connect 17 0 9 0;
 #X connect 18 0 5 0;
-#X restore 325 565 pd loading_files;
+#X restore 325 585 pd loading_files;
 #X obj 49 305 hsl 195 15 0 1 0 0 \$0-in \$0-in-init empty -2 -8 0 10
 -262144 -1 -1 0 1;
 #X obj 49 320 hsl 195 15 0 1 0 0 \$0-out \$0-out-init empty -2 -8 0
@@ -125,7 +124,7 @@
 #X connect 24 0 25 0;
 #X connect 25 0 23 4;
 #X connect 26 0 9 0;
-#X restore 214 620 pd video_processing;
+#X restore 214 640 pd video_processing;
 #X obj 49 335 hsl 195 15 1 0.0001 0 0 \$0-speed \$0-speed-init empty
 -2 -8 0 10 -262144 -1 -1 14551 1;
 #X text 7 335 speed;
@@ -168,7 +167,7 @@
 #X connect 4 0 5 1;
 #X connect 5 0 1 0;
 #X connect 6 0 4 1;
-#X restore 46 559 pd inpoint;
+#X restore 46 579 pd inpoint;
 #N canvas 944 97 450 300 outpoint 0;
 #X obj 38 -25 inlet;
 #X obj 38 206 outlet;
@@ -190,7 +189,7 @@
 #X connect 8 0 6 0;
 #X connect 8 1 7 0;
 #X connect 9 0 7 1;
-#X restore 46 530 pd outpoint;
+#X restore 46 550 pd outpoint;
 #N canvas 0 409 252 308 speed 0;
 #X obj 21 194 outlet;
 #X obj 21 -85 r \$0-out;
@@ -207,7 +206,7 @@
 #X obj 52 123 t b f;
 #X text 54 56 Samplingrate of the audio file;
 #X obj 32 101 * 4;
-#X floatatom 88 153 5 0 0 0 - - -, f 5;
+#X floatatom 88 153 5 0 0 0 - - -;
 #X obj 165 12 inlet;
 #X connect 1 0 8 0;
 #X connect 2 0 4 0;
@@ -227,11 +226,11 @@
 #X connect 12 1 15 0;
 #X connect 14 0 12 0;
 #X connect 16 0 12 0;
-#X restore 46 463 pd speed;
+#X restore 46 490 pd speed;
 #X text 191 353 |;
 #X text 158 363 normal speed;
 #X msg 294 245 frame \$1;
-#X floatatom 294 227 5 0 0 0 - - -, f 5;
+#X floatatom 294 227 5 0 0 0 - - -;
 #X obj 273 266 gemwin 30;
 #N canvas 947 334 450 300 envelope 0;
 #X obj 32 32 inlet~;
@@ -266,7 +265,7 @@
 #X connect 14 0 11 0;
 #X connect 14 1 4 0;
 #X connect 14 2 6 0;
-#X restore 46 646 pd envelope;
+#X restore 46 666 pd envelope;
 #X obj 399 268 hsl 50 15 0 150 0 0 \$0-env \$0-env-init empty -2 -8
 0 10 -262144 -1 -1 0 1;
 #X obj 250 180 cnv 15 20 20 empty empty 1 6 10 0 14 -261234 -66577
@@ -279,22 +278,24 @@
 0;
 #X text 394 250 envelope;
 #X text 276 319 choose in \, out \, speed and envelope size;
-#X floatatom 396 288 5 0 0 0 - - -, f 5;
+#X floatatom 396 288 5 0 0 0 - - -;
 #X obj 78 384 notein 1;
-#X obj 46 419 mtof;
-#X obj 46 442 expr 440/$f1;
-#X obj 46 485 t b b f f;
+#X obj 46 427 mtof;
+#X obj 46 512 t b b f f;
 #X obj 46 743 *~;
 #X obj 206 699 line~;
 #X msg 206 677 \$1 20;
 #X obj 206 456 / 127;
 #X obj 33 363 key;
-#X floatatom 3 419 5 0 0 0 - - -, f 5;
+#X floatatom 3 419 5 0 0 0 - - -;
 #X obj 33 383 t f b;
-#X msg 205 430 127;
+#X msg 206 430 127;
 #X text 24 78 Here we are adding support for a MIDI Keyboard. We get
 an monophonic A/V sampler.;
-#X text 41 792 Max Neupert - Bauhaus-Universität Weimar 2012;
+#X msg 46 447 440 \$1;
+#X obj 46 469 /;
+#X text 41 792 Max Neupert - Bauhaus-Universität Weimar 2012-2018
+;
 #X connect 2 0 5 0;
 #X connect 2 0 15 0;
 #X connect 3 0 26 0;
@@ -304,27 +305,28 @@ an monophonic A/V sampler.;
 #X connect 8 0 15 2;
 #X connect 19 0 2 0;
 #X connect 20 0 19 0;
-#X connect 21 0 40 0;
+#X connect 21 0 39 0;
 #X connect 24 0 26 0;
 #X connect 25 0 24 0;
-#X connect 27 0 41 0;
+#X connect 27 0 40 0;
 #X connect 28 0 36 0;
 #X connect 37 0 38 0;
-#X connect 37 1 44 0;
-#X connect 38 0 39 0;
-#X connect 39 0 21 0;
-#X connect 40 0 20 0;
-#X connect 40 1 27 1;
-#X connect 40 2 20 1;
-#X connect 40 3 27 2;
-#X connect 41 0 1 0;
-#X connect 41 0 1 1;
-#X connect 42 0 41 1;
+#X connect 37 1 43 0;
+#X connect 38 0 49 0;
+#X connect 39 0 20 0;
+#X connect 39 1 27 1;
+#X connect 39 2 20 1;
+#X connect 39 3 27 2;
+#X connect 40 0 1 0;
+#X connect 40 0 1 1;
+#X connect 41 0 40 1;
+#X connect 42 0 41 0;
 #X connect 43 0 42 0;
-#X connect 44 0 43 0;
-#X connect 44 0 15 1;
-#X connect 45 0 47 0;
-#X connect 47 0 38 0;
-#X connect 47 0 46 0;
-#X connect 47 1 48 0;
-#X connect 48 0 44 0;
+#X connect 43 0 15 1;
+#X connect 44 0 46 0;
+#X connect 46 0 38 0;
+#X connect 46 0 45 0;
+#X connect 46 1 47 0;
+#X connect 47 0 43 0;
+#X connect 49 0 50 0;
+#X connect 50 0 21 0;
