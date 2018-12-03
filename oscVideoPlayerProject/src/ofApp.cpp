@@ -10,7 +10,7 @@ void ofApp::setup(){
 	// Uncomment this to show movies with alpha channels
 	// moviePayload.setPixelFormat(OF_PIXELS_RGBA);
 
-	moviePayload.load("../bass2.mov");
+	moviePayload.load(MOVIE);
 	// moviePayload.setLoopState(OF_LOOP_NORMAL);
     moviePayload.setPaused(true);
 

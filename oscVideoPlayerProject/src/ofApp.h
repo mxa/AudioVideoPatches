@@ -5,6 +5,7 @@
 
 // listening port
 #define PORT 12345
+#define MOVIE "../bass2.mov"
 
 class ofApp : public ofBaseApp{
 	public:
