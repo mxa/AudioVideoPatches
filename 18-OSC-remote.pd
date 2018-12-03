@@ -12,18 +12,18 @@
 #X obj 323 654 dac~;
 #X obj 322 259 vline~;
 #X obj 73 242 hsl 195 15 0 1 0 0 \$0-scratch empty empty -2 -8 0 10
--262144 -1 -1 6000 1;
+-262144 -1 -1 0 1;
 #X obj 323 624 tabread4~ \$0-soundfile;
 #N canvas 0 50 450 300 (subpatch) 0;
 #X array \$0-soundfile 214599 float 2;
 #X coords 0 1 214599 -1 200 140 1;
 #X restore 70 92 graph;
 #X obj 73 257 hsl 195 15 0 1 0 0 \$0-in \$0-in-init empty -2 -8 0 10
--262144 -1 -1 10100 1;
+-262144 -1 -1 0 1;
 #X obj 73 272 hsl 195 15 0 1 0 0 \$0-out \$0-out-init empty -2 -8 0
-10 -262144 -1 -1 10900 1;
+10 -262144 -1 -1 19400 1;
 #X obj 73 232 hsl 195 10 0 1 0 0 empty \$0-playhead empty -2 -8 0 10
--228856 -1 -1 10161 1;
+-228856 -1 -1 0 1;
 #N canvas 374 613 325 204 scratch 0;
 #X obj 23 134 outlet;
 #X obj 23 59 *;
@@ -46,7 +46,7 @@
 #X text 22 243 scratch;
 #X text 14 228 playhead;
 #X obj 73 287 hsl 195 15 1 0.0001 0 0 \$0-speed \$0-speed-init empty
--2 -8 0 10 -262144 -1 -1 15000 1;
+-2 -8 0 10 -262144 -1 -1 14551 1;
 #X text 31 287 speed;
 #N canvas 163 563 475 300 init 0;
 #X obj 14 42 loadbang;
@@ -144,7 +144,7 @@
 #X connect 14 0 12 0;
 #X restore 358 133 pd speed;
 #X obj 358 155 t f f;
-#X obj 331 110 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+#X obj 331 110 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
 #X obj 331 178 metro;
 #X text 348 107 play looping;
@@ -172,7 +172,6 @@
 #X obj 349 453 change;
 #X obj 364 310 r \$0-samples;
 #X obj 388 388 s \$0-playhead;
-#X obj 388 367 speedlim 100;
 #X obj 349 410 + 0.5;
 #X obj 349 389 * 134;
 #X text 58 691 Max Neupert \, GMU - Bauhaus-Universität Weimar 2018
@@ -184,8 +183,9 @@
 #X obj 126 402 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
 #X obj 470 261 metro 1;
-#X obj 470 239 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+#X obj 470 239 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
+#X obj 388 367 speedlimit 100;
 #X connect 1 0 2 0;
 #X connect 2 0 4 0;
 #X connect 3 0 4 0;
@@ -213,15 +213,15 @@
 #X connect 45 0 40 0;
 #X connect 46 0 45 0;
 #X connect 47 0 48 0;
-#X connect 48 0 53 0;
-#X connect 48 0 55 0;
+#X connect 48 0 54 0;
+#X connect 48 0 62 0;
 #X connect 49 0 50 0;
 #X connect 50 0 7 0;
 #X connect 51 0 48 1;
-#X connect 53 0 52 0;
-#X connect 54 0 49 0;
-#X connect 55 0 54 0;
-#X connect 57 0 46 0;
-#X connect 60 0 46 0;
-#X connect 61 0 47 0;
-#X connect 62 0 61 0;
+#X connect 53 0 49 0;
+#X connect 54 0 53 0;
+#X connect 56 0 46 0;
+#X connect 59 0 46 0;
+#X connect 60 0 47 0;
+#X connect 61 0 60 0;
+#X connect 62 0 52 0;
